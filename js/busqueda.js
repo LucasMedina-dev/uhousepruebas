@@ -54,10 +54,6 @@ $.get("../js/db.json", function(respuesta){
 
 })
 
-    casa.push(respuesta.filter(x => x.tipo == "casa"))
-    departamento.push(respuesta.filter(x => x.tipo == "departamento"))
-    ph.push(respuesta.filter(x => x.tipo == "ph"))
-
 
 let main = document.getElementById("main")
 let propiedades= document.getElementsByClassName("propiedades")[0]
