@@ -42,7 +42,7 @@ class vivienda{
         this.baños=baños;
     }
 }
-$.get("js/db.json", function(respuesta, sucess){
+$.get("../js/db.json", function(respuesta, sucess){
     const casa=respuesta.find(x => x.tipo == "casa")
     const departamento=respuesta.find(x => x.tipo == "departamento")
     const ph=respuesta.find(x => x.tipo == "ph")
