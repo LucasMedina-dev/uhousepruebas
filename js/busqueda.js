@@ -42,16 +42,21 @@ class vivienda{
         this.baños=baños;
     }
 }
-const casa=[]
-const departamento=[]
-const ph=[]
-function push(respuesta){
+
+let data=[]
+let casa=[]
+let departamento=[]
+let ph=[]
+$.get("../js/db.json", function(respuesta){
+    casa = respuesta.filter(x => x.tipo == "casa")
+    departamento = respuesta.filter(x => x.tipo == "departamento")
+    ph = respuesta.filter(x => x.tipo == "ph")
+
+})
+
     casa.push(respuesta.filter(x => x.tipo == "casa"))
     departamento.push(respuesta.filter(x => x.tipo == "departamento"))
     ph.push(respuesta.filter(x => x.tipo == "ph"))
-}
-$.get("../js/db.json", push(respuesta))
-
 
 
 let main = document.getElementById("main")
