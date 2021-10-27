@@ -50,6 +50,10 @@ $.get("../js/db.json", function(respuesta, sucess){
     departamento.push(respuesta.filter(x => x.tipo == "departamento"))
     ph.push(respuesta.filter(x => x.tipo == "ph"))
 })
+const casas=casa[0]
+const phs=ph[0]
+const departamentos=departamento[0]
+
 
 let main = document.getElementById("main")
 let propiedades= document.getElementsByClassName("propiedades")[0]
@@ -165,9 +169,9 @@ if (isNaN(precioMaximo)) {
     precioMaximo=9999999
 }
 
-const casaFiltrado= casa.filter(casa => casa.ciudad.toLowerCase()==ciudad && casa.precio>precioMinimo && casa.precio<precioMaximo)
-const departamentoFiltrado= departamento.filter(departamento => departamento.ciudad.toLowerCase()==ciudad && departamento.precio>precioMinimo && departamento.precio<precioMaximo)
-const phFiltrado= ph.filter(ph => ph.ciudad.toLowerCase()==ciudad && ph.precio>precioMinimo && ph.precio<precioMaximo)
+const casaFiltrado= casas.filter(casa => casa.ciudad.toLowerCase()==ciudad && casa.precio>precioMinimo && casa.precio<precioMaximo)
+const departamentoFiltrado= departamentos.filter(departamento => departamento.ciudad.toLowerCase()==ciudad && departamento.precio>precioMinimo && departamento.precio<precioMaximo)
+const phFiltrado= phs.filter(ph => ph.ciudad.toLowerCase()==ciudad && ph.precio>precioMinimo && ph.precio<precioMaximo)
 agregarViviendas(casaFiltrado)
 agregarViviendas(departamentoFiltrado)
 agregarViviendas(phFiltrado)
