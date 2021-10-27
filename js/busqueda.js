@@ -46,9 +46,9 @@ const casa=[]
 const departamento=[]
 const ph=[]
 $.get("../js/db.json", function(respuesta, sucess){
-    casa=respuesta.filter(x => x.tipo == "casa")
-    departamento=respuesta.filter(x => x.tipo == "departamento")
-    ph=respuesta.filter(x => x.tipo == "ph")
+    casa.push(respuesta.filter(x => x.tipo == "casa"))
+    departamento.push(respuesta.filter(x => x.tipo == "departamento"))
+    ph.push(respuesta.filter(x => x.tipo == "ph"))
 })
 
 let main = document.getElementById("main")
