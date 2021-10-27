@@ -42,9 +42,9 @@ class vivienda{
         this.baños=baños;
     }
 }
-const casa=[]
-const departamento=[]
-const ph=[]
+const casa
+const departamento
+const ph
 $.get("../js/db.json", function(respuesta, sucess){
     casa.push(respuesta.filter(x => x.tipo == "casa"))
     departamento.push(respuesta.filter(x => x.tipo == "departamento"))
