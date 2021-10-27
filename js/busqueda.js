@@ -43,12 +43,11 @@ class vivienda{
     }
 }
 $.get("../js/db.json", function(respuesta, sucess){
-    const casa=respuesta.filter(x => x.tipo == "casa")
+    let db= respuesta
+})
+const casa=respuesta.filter(x => x.tipo == "casa")
     const departamento=respuesta.filter(x => x.tipo == "departamento")
     const ph=respuesta.filter(x => x.tipo == "ph")
-    console.log(casa)
-})
-
 
 let main = document.getElementById("main")
 let propiedades= document.getElementsByClassName("propiedades")[0]
