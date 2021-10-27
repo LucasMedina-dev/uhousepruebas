@@ -1,5 +1,5 @@
 let apiConversor= "https://www.dolarsi.com/api/api.php?type=valoresprincipales"
-$.get(apiConversor, function(db, sucess){
+$.get(apiConversor, function(respuesta, sucess){
     let dolar=respuesta
     $(sucess).ready()
     $("header").append(`
@@ -42,13 +42,14 @@ class vivienda{
         this.baños=baños;
     }
 }
+const casa=[]
+const departamento=[]
+const ph=[]
 $.get("../js/db.json", function(respuesta, sucess){
-    let db= respuesta
-    return db
+    casa=respuesta.filter(x => x.tipo == "casa")
+    departamento=respuesta.filter(x => x.tipo == "departamento")
+    ph=respuesta.filter(x => x.tipo == "ph")
 })
-const casa=db.filter(x => x.tipo == "casa")
-const departamento=db.filter(x => x.tipo == "departamento")
-const ph=db.filter(x => x.tipo == "ph")
 
 let main = document.getElementById("main")
 let propiedades= document.getElementsByClassName("propiedades")[0]
