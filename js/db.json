@@ -1,0 +1,162 @@
+[
+  {
+    "id": 0,
+    "condicion": "Venta",
+    "ciudad": "Mar del Plata",
+    "tipo": "casa",
+    "precio": 15000,
+    "ambientes": 1,
+    "pisos": 1,
+    "baños": 1
+  },
+  {
+    "id": 1,
+    "condicion": "Venta",
+    "ciudad": "Mar del Plata",
+    "tipo": "casa",
+    "precio": 40000,
+    "ambientes": 3,
+    "pisos": 2,
+    "baños": 1
+  },
+  {
+    "id": 2,
+    "condicion": "Venta",
+    "ciudad": "Mar del Plata",
+    "tipo": "casa",
+    "precio": 70000,
+    "ambientes": 4,
+    "pisos": 2,
+    "baños": 2
+  },
+  {
+    "id": 3,
+    "condicion": "Venta",
+    "ciudad": "Mar del Plata",
+    "tipo": "casa",
+    "precio": 50000,
+    "ambientes": 3,
+    "pisos": 1,
+    "baños": 1
+  },
+  {
+    "id": 4,
+    "condicion": "Venta",
+    "ciudad": "Batan",
+    "tipo": "casa",
+    "precio": 15000,
+    "ambientes": 1,
+    "pisos": 1,
+    "baños": 1
+  },
+  {
+    "id": 5,
+    "condicion": "Venta",
+    "ciudad": "Batan",
+    "tipo": "casa",
+    "precio": 40000,
+    "ambientes": 3,
+    "pisos": 2,
+    "baños": 1
+  },
+  {
+    "id": 6,
+    "condicion": "Venta",
+    "ciudad": "Batan",
+    "tipo": "casa",
+    "precio": 70000,
+    "ambientes": 4,
+    "pisos": 2,
+    "baños": 2
+  },
+  {
+    "id": 7,
+    "condicion": "Venta",
+    "ciudad": "Batan",
+    "tipo": "casa",
+    "precio": 50000,
+    "ambientes": 3,
+    "pisos": 1,
+    "baños": 1
+  },
+  {
+    "id": 12,
+    "condicion": "Venta",
+    "ciudad": "Mar del Plata",
+    "tipo": "ph",
+    "precio": 15000,
+    "ambientes": 1,
+    "pisos": 2,
+    "baños": 1
+  },
+  {
+    "id": 13,
+    "condicion": "Venta",
+    "ciudad": "Mar del Plata",
+    "tipo": "ph",
+    "precio": 40000,
+    "ambientes": 3,
+    "pisos": 2,
+    "baños": 1
+  },
+  {
+    "id": 14,
+    "condicion": "Venta",
+    "ciudad": "Mar del Plata",
+    "tipo": "ph",
+    "precio": 70000,
+    "ambientes": 4,
+    "pisos": 2,
+    "baños": 1
+  },
+  {
+    "id": 15,
+    "condicion": "Venta",
+    "ciudad": "Mar del Plata",
+    "tipo": "ph",
+    "precio": 50000,
+    "ambientes": 3,
+    "pisos": 2,
+    "baños": 1
+  },
+  {
+    "id": 8,
+    "condicion": "Venta",
+    "ciudad": "Mar del Plata",
+    "tipo": "departamento",
+    "precio": 90000,
+    "ambientes": 5,
+    "pisos": 1,
+    "baños": 2
+  },
+  {
+    "id": 9,
+    "condicion": "Venta",
+    "ciudad": "Mar del Plata",
+    "tipo": "departamento",
+    "precio": 65000,
+    "ambientes": 4,
+    "pisos": 1,
+    "baños": 2
+  },
+  {
+    "id": 10,
+    "condicion": "Venta",
+    "ciudad": "Mar del Plata",
+    "tipo": "departamento",
+    "precio": 50000,
+    "ambientes": 4,
+    "pisos": 1,
+    "baños": 1
+  },
+  {
+    "id": 11,
+    "condicion": "Venta",
+    "ciudad": "Mar del Plata",
+    "tipo": "departamento",
+    "precio": 25000,
+    "ambientes": 1,
+    "pisos": 1,
+    "baños": 1
+  }
+]

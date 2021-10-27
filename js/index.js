@@ -58,3 +58,9 @@ busquedaCiudad.onchange= () =>{
 $(".header_boton").click(function(){
     $(".header_menu-size").toggle(200)
 })
+
+
+
+$.get("js/db.json", function(respuesta, sucess){
+    console.log(respuesta)
+})
