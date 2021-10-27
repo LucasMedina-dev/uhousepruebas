@@ -43,9 +43,9 @@ class vivienda{
     }
 }
 $.get("../js/db.json", function(respuesta, sucess){
-    const casa=respuesta.find(x => x.tipo == "casa")
-    const departamento=respuesta.find(x => x.tipo == "departamento")
-    const ph=respuesta.find(x => x.tipo == "ph")
+    const casa=respuesta.filter(x => x.tipo == "casa")
+    const departamento=respuesta.filter(x => x.tipo == "departamento")
+    const ph=respuesta.filter(x => x.tipo == "ph")
     console.log(casa)
 })
 
