@@ -45,14 +45,13 @@ class vivienda{
 const casa=[]
 const departamento=[]
 const ph=[]
-$.get("../js/db.json", function(respuesta, sucess){
+function push(respuesta, sucess){
     casa.push(respuesta.filter(x => x.tipo == "casa"))
     departamento.push(respuesta.filter(x => x.tipo == "departamento"))
     ph.push(respuesta.filter(x => x.tipo == "ph"))
-})
-const casas=casa[0]
-const phs=ph[0]
-const departamentos=departamento[0]
+}
+$.get("../js/db.json", push())
+
 
 
 let main = document.getElementById("main")
