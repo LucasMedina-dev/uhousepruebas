@@ -45,12 +45,12 @@ class vivienda{
 const casa=[]
 const departamento=[]
 const ph=[]
-function push(respuesta, sucess){
+function push(respuesta){
     casa.push(respuesta.filter(x => x.tipo == "casa"))
     departamento.push(respuesta.filter(x => x.tipo == "departamento"))
     ph.push(respuesta.filter(x => x.tipo == "ph"))
 }
-$.get("../js/db.json", push())
+$.get("../js/db.json", push(respuesta))
 
 
 
