@@ -61,6 +61,3 @@ $(".header_boton").click(function(){
 
 
 
-$.get("js/db.json", function(respuesta, sucess){
-    console.log(respuesta)
-})

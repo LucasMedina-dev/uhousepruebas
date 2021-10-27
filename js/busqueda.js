@@ -42,26 +42,12 @@ class vivienda{
         this.baños=baños;
     }
 }
-const casa=[]
-const departamento=[]
-const ph=[]
+$.get("js/db.json", function(respuesta, sucess){
+    const casa=respuesta.find(x => x.tipo == "casa")
+    const departamento=respuesta.find(x => x.tipo == "departamento")
+    const ph=respuesta.find(x => x.tipo == "ph")
+})
 
-casa.push(new vivienda(0, "Venta", "Mar del Plata", "casa", 15000, 1, 1, 1))
-casa.push(new vivienda(1, "Venta", "Mar del Plata", "casa", 40000, 3, 2, 1))
-casa.push(new vivienda(2, "Venta", "Mar del Plata", "casa", 70000, 4, 2, 2))
-casa.push(new vivienda(3, "Venta", "Mar del Plata", "casa", 50000, 3, 1, 1))
-casa.push(new vivienda(4, "Venta", "Batan", "casa", 15000, 1, 1, 1))
-casa.push(new vivienda(5, "Venta", "Batan", "casa", 40000, 3, 2, 1))
-casa.push(new vivienda(6, "Venta", "Batan", "casa", 70000, 4, 2, 2))
-casa.push(new vivienda(7, "Venta", "Batan", "casa", 50000, 3, 1, 1))
-departamento.push(new vivienda(8, "Venta", "Mar del Plata", "departamento", 90000, 5, 1, 2))
-departamento.push(new vivienda(9, "Venta", "Mar del Plata", "departamento", 65000, 4, 1, 2))
-departamento.push(new vivienda(10, "Venta", "Mar del Plata", "departamento", 50000, 4, 1, 1))
-departamento.push(new vivienda(11, "Venta", "Mar del Plata", "departamento", 25000, 1, 1, 1))
-ph.push(new vivienda(12, "Venta", "Mar del Plata", "ph", 15000, 1, 2, 1))
-ph.push(new vivienda(13, "Venta", "Mar del Plata", "ph", 40000, 3, 2, 1))
-ph.push(new vivienda(14, "Venta", "Mar del Plata", "ph", 70000, 4, 2, 1))
-ph.push(new vivienda(15, "Venta", "Mar del Plata", "ph", 50000, 3, 2, 1))
 
 let main = document.getElementById("main")
 let propiedades= document.getElementsByClassName("propiedades")[0]
