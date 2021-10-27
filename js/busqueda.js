@@ -30,29 +30,7 @@ function ejecutarBusqueda() {
     
 }
 
-class vivienda{
-    constructor(id, condicion, ciudad, tipo, precio, ambientes, pisos, baños){
-        this.id=id;
-        this.condicion=condicion;
-        this.ciudad=ciudad;
-        this.tipo=tipo;
-        this.precio=precio;
-        this.ambientes=ambientes;
-        this.pisos=pisos;
-        this.baños=baños;
-    }
-}
 
-let data=[]
-let casa=[]
-let departamento=[]
-let ph=[]
-$.get("../js/db.json", function(respuesta){
-    casa = respuesta.filter(x => x.tipo == "casa")
-    departamento = respuesta.filter(x => x.tipo == "departamento")
-    ph = respuesta.filter(x => x.tipo == "ph")
-
-})
 
 
 let main = document.getElementById("main")
@@ -169,12 +147,24 @@ if (isNaN(precioMaximo)) {
     precioMaximo=9999999
 }
 
-const casaFiltrado= casa.filter(casa => casa.ciudad.toLowerCase()==ciudad && casa.precio>precioMinimo && casa.precio<precioMaximo)
-const departamentoFiltrado= departamento.filter(departamento => departamento.ciudad.toLowerCase()==ciudad && departamento.precio>precioMinimo && departamento.precio<precioMaximo)
-const phFiltrado= ph.filter(ph => ph.ciudad.toLowerCase()==ciudad && ph.precio>precioMinimo && ph.precio<precioMaximo)
-agregarViviendas(casaFiltrado)
-agregarViviendas(departamentoFiltrado)
-agregarViviendas(phFiltrado)
+let casa=[]
+let departamento=[]
+let ph=[]
+let casaFiltrado=[]
+let departamentoFiltrado=[]
+let phFiltrado=[]
+$.get("../js/db.json", function(respuesta){
+    casa = respuesta.filter(x => x.tipo == "casa")
+    departamento = respuesta.filter(x => x.tipo == "departamento")
+    ph = respuesta.filter(x => x.tipo == "ph")
+    casaFiltrado= casa.filter(casa => casa.ciudad.toLowerCase()==ciudad && casa.precio>precioMinimo && casa.precio<precioMaximo)
+    departamentoFiltrado= departamento.filter(departamento => departamento.ciudad.toLowerCase()==ciudad && departamento.precio>precioMinimo && departamento.precio<precioMaximo)
+    phFiltrado= ph.filter(ph => ph.ciudad.toLowerCase()==ciudad && ph.precio>precioMinimo && ph.precio<precioMaximo)
+    agregarViviendas(casaFiltrado)
+    agregarViviendas(departamentoFiltrado)
+    agregarViviendas(phFiltrado)
+})
+
 
 
 // Buscador por Casa, Departamento o PH
