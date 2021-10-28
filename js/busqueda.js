@@ -242,50 +242,50 @@ $(".propiedades").change(function(){
         $(this).parent().children(".propiedades_informacion").delay(500)
                                                             .fadeIn(1000)
     });
-
-})
-
-
-
-function borrarItem ( array, item ) {
-    var i = array.indexOf( item );
-    array.splice( i, 1 );
-}
-
-const agregados=[]
-$(".propiedades_favorito").click(function(){
-    let id= $(this).attr("id")
-    let fl=id.charAt(0)
-    let n=id.match(/\d+/)[0]
-    switch(fl){
-        case "c":
-            if (agregados.find(x => x == n)){
-                borrarItem(agregados, n)
-            }else{
-                agregados.push(n)
-            }
-        break;
-        case "d":
-            if (agregados.find(x => x == n)){
-                borrarItem(agregados, n)
-            }else{
-                agregados.push(n)
-            }
-        break;
-        case "p":
-            if (agregados.find(x => x == n)){
-                borrarItem(agregados, n)
-            }else{
-                agregados.push(n)
-            }
-        break;
+    function borrarItem ( array, item ) {
+        var i = array.indexOf( item );
+        array.splice( i, 1 );
     }
-    guardarLS("idFav", JSON.stringify(agregados))
-    
+
+    const agregados=[]
+    $(".propiedades_favorito").click(function(){
+        let id= $(this).attr("id")
+        let fl=id.charAt(0)
+        let n=id.match(/\d+/)[0]
+        switch(fl){
+            case "c":
+                if (agregados.find(x => x == n)){
+                    borrarItem(agregados, n)
+                }else{
+                    agregados.push(n)
+                }
+            break;
+            case "d":
+                if (agregados.find(x => x == n)){
+                    borrarItem(agregados, n)
+                }else{
+                    agregados.push(n)
+                }
+            break;
+            case "p":
+                if (agregados.find(x => x == n)){
+                    borrarItem(agregados, n)
+                }else{
+                    agregados.push(n)
+                }
+            break;
+        }
+        guardarLS("idFav", JSON.stringify(agregados))
+        
+    })
+
+    $(".header_boton").click(function(){
+        $(".header_menu-size").toggle(200)
+    })
+
+
 })
 
-$(".header_boton").click(function(){
-    $(".header_menu-size").toggle(200)
-})
+
 
 
