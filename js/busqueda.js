@@ -242,7 +242,7 @@ $('.propiedades_label').click(function(){
     }
 })
 
-$(domListo).change(function(){
+$(domListo).ready(function(){
     console.log("ready")
     $(".propiedades_toggle").click(function(){ 
         $(this).fadeOut(500)
