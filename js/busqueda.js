@@ -197,7 +197,7 @@ fetch("../js/db.json")
                 $(this).children(".propiedades_favorito").removeClass("propiedades_favorito-true")
                 $(this).children(".propiedades_favorito").addClass("propiedades_favorito-false")
             }
-        })
+        }))
         $(".propiedades_toggle").click(function(){ 
             $(this).fadeOut(500)
             $(this).parent().children(".propiedades_informacion").delay(500)
