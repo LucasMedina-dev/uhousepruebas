@@ -1,7 +1,6 @@
 let apiConversor= "https://www.dolarsi.com/api/api.php?type=valoresprincipales"
 $.get(apiConversor, function(respuesta, sucess){
     let dolar=respuesta
-    $(sucess).ready()
     $("header").append(`
         <div class="header_cotizaciones" style="display:none">
             <ul class="header_cotizaciones-liststyle">
@@ -24,6 +23,9 @@ $.get(apiConversor, function(respuesta, sucess){
 let enviarBusqueda = document.getElementById("enviarBusqueda")
 function guardarLS(clave, valor){
     localStorage.setItem(clave, valor)
+}
+function tomarLS(clave){
+    localStorage.getItem(clave)
 }
 function ejecutarBusqueda() {
     window.open("busquedas.html", "_self");
@@ -161,17 +163,26 @@ if (isNaN(precioMinimo)){
 if (isNaN(precioMaximo)) {
     precioMaximo=9999999
 }
-
+// variables declaradas para recibir todas las casas departamentos y ph
 let casa=[]
 let departamento=[]
 let ph=[]
+
+// variables declaradas para recibir viviendas filtrados por ciudad y precio
 let casaFiltrado=[]
 let departamentoFiltrado=[]
 let phFiltrado=[]
 
+const agregados=tomarLS(idFav)
+const favoritos=[]
+function borrarItem ( array, item ) {
+        var i = array.indexOf( item );
+        array.splice( i, 1 );
+    }
 fetch("../js/db.json")
     .then((response) => response.json())
-    .then( (data) => {
+    .then(
+    (data) => {
         casa = data.filter(x => x.tipo == "casa")
         departamento = data.filter(x => x.tipo == "departamento")
         ph = data.filter(x => x.tipo == "ph")
@@ -205,8 +216,8 @@ fetch("../js/db.json")
         })
         $(".propiedades_favorito").click(function(){
             let id= $(this).attr("id")
-            let fl=id.charAt(0)
-            let n=id.match(/\d+/)[0]
+            let fl=id.charAt(0)     //Esto lee la primer letra del id (fl= first letter)
+            let n=id.match(/\d+/)[0]//Esto lee los numeros del id
             switch(fl){
                 case "c":
                     if (agregados.find(x => x == n)){
@@ -237,9 +248,13 @@ fetch("../js/db.json")
 
 
 // Buscador por Casa, Departamento o PH
+
+
 buscadorCasa.checked=true
 buscadorPh.checked=true
 buscadorDepartamento.checked=true
+
+const tipos=[]
 
 buscadorCasa.onclick= () =>{
     if (buscadorCasa.checked!=false){
@@ -272,11 +287,7 @@ buscadorPh.onclick= () =>{
     sinResultado()
 }
 
-const agregados=[]
-function borrarItem ( array, item ) {
-        var i = array.indexOf( item );
-        array.splice( i, 1 );
-    }
+
 
 $(".header_boton").click(function(){
     $(".header_menu-size").toggle(200)
