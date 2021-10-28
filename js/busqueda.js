@@ -220,28 +220,31 @@ buscadorPh.onclick= () =>{
 }
 
 
+$(".propiedades").onchange(function(){
+    $('.propiedades_label').click(function(){
+        if ($(this).children(".favorito").prop("checked")==true){
+            $(this).children(".propiedades_favorito").children("i").animate({fontSize:"1.5rem"}, 100)
+                                                                   .animate({fontSize:"1.2rem"}, 100)
+            $(this).children(".propiedades_favorito").addClass("propiedades_favorito-true")
+            $(this).children(".propiedades_favorito").removeClass("propiedades_favorito-false")
 
-$('.propiedades_label').click(function(){
-    if ($(this).children(".favorito").prop("checked")==true){
-        $(this).children(".propiedades_favorito").children("i").animate({fontSize:"1.5rem"}, 100)
-                                                               .animate({fontSize:"1.2rem"}, 100)
-        $(this).children(".propiedades_favorito").addClass("propiedades_favorito-true")
-        $(this).children(".propiedades_favorito").removeClass("propiedades_favorito-false")
+        }
+        if ($(this).children(".favorito").prop("checked")==false){
+            $(this).children(".propiedades_favorito").children("i").animate({fontSize:"1rem"}, 100)
+            $(this).children(".propiedades_favorito").removeClass("propiedades_favorito-true")
+            $(this).children(".propiedades_favorito").addClass("propiedades_favorito-false")
+        }
+    })
 
-    }
-    if ($(this).children(".favorito").prop("checked")==false){
-        $(this).children(".propiedades_favorito").children("i").animate({fontSize:"1rem"}, 100)
-        $(this).children(".propiedades_favorito").removeClass("propiedades_favorito-true")
-        $(this).children(".propiedades_favorito").addClass("propiedades_favorito-false")
-    }
+
+    $(".propiedades_toggle").click(function(){ 
+        $(this).fadeOut(500)
+        $(this).parent().children(".propiedades_informacion").delay(500)
+                                                            .fadeIn(1000)
+    });
+    
 })
 
-
-$(".propiedades_toggle").click(function(){ 
-    $(this).fadeOut(500)
-    $(this).parent().children(".propiedades_informacion").delay(500)
-                                                        .fadeIn(1000)
-});
 
 
 function borrarItem ( array, item ) {
