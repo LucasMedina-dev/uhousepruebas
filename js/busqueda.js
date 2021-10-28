@@ -169,7 +169,7 @@ let casaFiltrado=[]
 let departamentoFiltrado=[]
 let phFiltrado=[]
 let domListo
-$.get("../js/db.json", function(respuesta){
+$.get("../js/db.json", function(respuesta, sucess){
     casa = respuesta.filter(x => x.tipo == "casa")
     departamento = respuesta.filter(x => x.tipo == "departamento")
     ph = respuesta.filter(x => x.tipo == "ph")
