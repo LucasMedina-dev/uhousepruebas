@@ -170,7 +170,7 @@ let departamentoFiltrado=[]
 let phFiltrado=[]
 
 fetch("../js/db.json")
-    .then((response) => responde.json())
+    .then((response) => response.json())
     .then( (data) => {
         casa = data.filter(x => x.tipo == "casa")
         departamento = data.filter(x => x.tipo == "departamento")
@@ -183,8 +183,7 @@ fetch("../js/db.json")
         agregarViviendas(phFiltrado)
         sinResultado() 
     }) 
-    .then( 
-        $('.propiedades_label').click(function(){
+    .then($('.propiedades_label').click(function(){
             if ($(this).children(".favorito").prop("checked")==true){
                 $(this).children(".propiedades_favorito").children("i").animate({fontSize:"1.5rem"}, 50)
                                                                        .animate({fontSize:"1.2rem"}, 50)
@@ -197,7 +196,7 @@ fetch("../js/db.json")
                 $(this).children(".propiedades_favorito").removeClass("propiedades_favorito-true")
                 $(this).children(".propiedades_favorito").addClass("propiedades_favorito-false")
             }
-        }))
+        })
         $(".propiedades_toggle").click(function(){ 
             $(this).fadeOut(500)
             $(this).parent().children(".propiedades_informacion").delay(500)
@@ -232,7 +231,8 @@ fetch("../js/db.json")
             }
             guardarLS("idFav", JSON.stringify(agregados))
         })
-)
+    )
+
 
 
 // Buscador por Casa, Departamento o PH
