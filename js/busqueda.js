@@ -219,14 +219,7 @@ buscadorPh.onclick= () =>{
     sinResultado()
 }
 
-let id
-let fl=id.charAt(0)
-let n=id.match(/\d+/)[0]
 const agregados=[]
-function borrarItem ( array, item ) {
-        var i = array.indexOf( item );
-        array.splice( i, 1 );
-    }
 $(".propiedades").change(function(){
     $('.propiedades_label').click(function(){
         if ($(this).children(".favorito").prop("checked")==true){
@@ -249,11 +242,16 @@ $(".propiedades").change(function(){
         $(this).parent().children(".propiedades_informacion").delay(500)
                                                             .fadeIn(1000)
     });
-    
+    function borrarItem ( array, item ) {
+        var i = array.indexOf( item );
+        array.splice( i, 1 );
+    }
 
     
     $(".propiedades_favorito").click(function(){
-        id= $(this).attr("id")
+        let id= $(this).attr("id")
+        let fl=id.charAt(0)
+        let n=id.match(/\d+/)[0]
         switch(fl){
             case "c":
                 if (agregados.find(x => x == n)){
