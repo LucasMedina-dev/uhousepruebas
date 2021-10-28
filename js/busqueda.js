@@ -220,7 +220,7 @@ buscadorPh.onclick= () =>{
 }
 
 
-$(".propiedades").ready(function(){
+$(".propiedades").change(function(){
     $('.propiedades_label').click(function(){
         if ($(this).children(".favorito").prop("checked")==true){
             $(this).children(".propiedades_favorito").children("i").animate({fontSize:"1.5rem"}, 100)
