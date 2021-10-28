@@ -219,18 +219,21 @@ buscadorPh.onclick= () =>{
     sinResultado()
 }
 
-
+let id= $(this).attr("id")
+let fl=id.charAt(0)
+let n=id.match(/\d+/)[0]
+const agregados=[]
 $(".propiedades").change(function(){
     $('.propiedades_label').click(function(){
         if ($(this).children(".favorito").prop("checked")==true){
-            $(this).children(".propiedades_favorito").children("i").animate({fontSize:"1.5rem"}, 100)
-                                                                   .animate({fontSize:"1.2rem"}, 100)
+            $(this).children(".propiedades_favorito").children("i").animate({fontSize:"1.5rem"}, 50)
+                                                                   .animate({fontSize:"1.2rem"}, 50)
             $(this).children(".propiedades_favorito").addClass("propiedades_favorito-true")
             $(this).children(".propiedades_favorito").removeClass("propiedades_favorito-false")
 
         }
         if ($(this).children(".favorito").prop("checked")==false){
-            $(this).children(".propiedades_favorito").children("i").animate({fontSize:"1rem"}, 100)
+            $(this).children(".propiedades_favorito").children("i").animate({fontSize:"1rem"}, 50)
             $(this).children(".propiedades_favorito").removeClass("propiedades_favorito-true")
             $(this).children(".propiedades_favorito").addClass("propiedades_favorito-false")
         }
@@ -247,11 +250,8 @@ $(".propiedades").change(function(){
         array.splice( i, 1 );
     }
 
-    const agregados=[]
+    
     $(".propiedades_favorito").click(function(){
-        let id= $(this).attr("id")
-        let fl=id.charAt(0)
-        let n=id.match(/\d+/)[0]
         switch(fl){
             case "c":
                 if (agregados.find(x => x == n)){
