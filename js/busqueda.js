@@ -291,3 +291,6 @@ $(".header_boton").click(function(){
     })
 
 
+$(document).ready(function(){
+    console.log("listo para toquetear")
+});
