@@ -224,7 +224,7 @@ function borrarItem ( array, item ) {
         var i = array.indexOf( item );
         array.splice( i, 1 );
     }
-$(".propiedades").change(function(){
+$(document).load(function(){
     $('.propiedades_label').click(function(){
         if ($(this).children(".favorito").prop("checked")==true){
             $(this).children(".propiedades_favorito").children("i").animate({fontSize:"1.5rem"}, 50)
@@ -280,13 +280,13 @@ $(".propiedades").change(function(){
         
     })
 
-    $(".header_boton").click(function(){
-        $(".header_menu-size").toggle(200)
-    })
+    
 
 
 })
 
-
+$(".header_boton").click(function(){
+        $(".header_menu-size").toggle(200)
+    })
 
 
