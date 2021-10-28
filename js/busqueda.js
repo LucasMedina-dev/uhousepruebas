@@ -173,7 +173,7 @@ let casaFiltrado=[]
 let departamentoFiltrado=[]
 let phFiltrado=[]
 
-const agregados=tomarLS(idFav)
+const agregados=tomarLS("idFav")
 const favoritos=[]
 function borrarItem ( array, item ) {
         var i = array.indexOf( item );
