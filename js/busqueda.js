@@ -182,57 +182,57 @@ fetch("../js/db.json")
         agregarViviendas(departamentoFiltrado)
         agregarViviendas(phFiltrado)
         sinResultado() 
-        
+    }) 
     .then( 
-    $('.propiedades_label').click(function(){
-        if ($(this).children(".favorito").prop("checked")==true){
-            $(this).children(".propiedades_favorito").children("i").animate({fontSize:"1.5rem"}, 50)
-                                                                   .animate({fontSize:"1.2rem"}, 50)
-            $(this).children(".propiedades_favorito").addClass("propiedades_favorito-true")
-            $(this).children(".propiedades_favorito").removeClass("propiedades_favorito-false")
+        $('.propiedades_label').click(function(){
+            if ($(this).children(".favorito").prop("checked")==true){
+                $(this).children(".propiedades_favorito").children("i").animate({fontSize:"1.5rem"}, 50)
+                                                                       .animate({fontSize:"1.2rem"}, 50)
+                $(this).children(".propiedades_favorito").addClass("propiedades_favorito-true")
+                $(this).children(".propiedades_favorito").removeClass("propiedades_favorito-false")
 
-        }
-        if ($(this).children(".favorito").prop("checked")==false){
-            $(this).children(".propiedades_favorito").children("i").animate({fontSize:"1rem"}, 50)
-            $(this).children(".propiedades_favorito").removeClass("propiedades_favorito-true")
-            $(this).children(".propiedades_favorito").addClass("propiedades_favorito-false")
-        }
-    })
-    $(".propiedades_toggle").click(function(){ 
-        $(this).fadeOut(500)
-        $(this).parent().children(".propiedades_informacion").delay(500)
-                                                            .fadeIn(1000)
-    });
-    $(".propiedades_favorito").click(function(){
-        let id= $(this).attr("id")
-        let fl=id.charAt(0)
-        let n=id.match(/\d+/)[0]
-        switch(fl){
-            case "c":
-                if (agregados.find(x => x == n)){
-                    borrarItem(agregados, n)
-                }else{
-                    agregados.push(n)
-                }
-            break;
-            case "d":
-                if (agregados.find(x => x == n)){
-                    borrarItem(agregados, n)
-                }else{
-                    agregados.push(n)
-                }
-            break;
-            case "p":
-                if (agregados.find(x => x == n)){
-                    borrarItem(agregados, n)
-                }else{
-                    agregados.push(n)
-                }
-            break;
-        }
-        guardarLS("idFav", JSON.stringify(agregados))
-    })
-}
+            }
+            if ($(this).children(".favorito").prop("checked")==false){
+                $(this).children(".propiedades_favorito").children("i").animate({fontSize:"1rem"}, 50)
+                $(this).children(".propiedades_favorito").removeClass("propiedades_favorito-true")
+                $(this).children(".propiedades_favorito").addClass("propiedades_favorito-false")
+            }
+        })
+        $(".propiedades_toggle").click(function(){ 
+            $(this).fadeOut(500)
+            $(this).parent().children(".propiedades_informacion").delay(500)
+                                                                .fadeIn(1000)
+        })
+        $(".propiedades_favorito").click(function(){
+            let id= $(this).attr("id")
+            let fl=id.charAt(0)
+            let n=id.match(/\d+/)[0]
+            switch(fl){
+                case "c":
+                    if (agregados.find(x => x == n)){
+                        borrarItem(agregados, n)
+                    }else{
+                        agregados.push(n)
+                    }
+                break;
+                case "d":
+                    if (agregados.find(x => x == n)){
+                        borrarItem(agregados, n)
+                    }else{
+                        agregados.push(n)
+                    }
+                break;
+                case "p":
+                    if (agregados.find(x => x == n)){
+                        borrarItem(agregados, n)
+                    }else{
+                        agregados.push(n)
+                    }
+                break;
+            }
+            guardarLS("idFav", JSON.stringify(agregados))
+        })
+)
 
 
 // Buscador por Casa, Departamento o PH
