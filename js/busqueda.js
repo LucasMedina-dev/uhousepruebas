@@ -183,7 +183,7 @@ fetch("../js/db.json")
         agregarViviendas(phFiltrado)
         sinResultado() 
     }) 
-    .then($('.propiedades_label').click(function(){
+    .then($('.propiedades_label').click(()=>{
             if ($(this).children(".favorito").prop("checked")==true){
                 $(this).children(".propiedades_favorito").children("i").animate({fontSize:"1.5rem"}, 50)
                                                                        .animate({fontSize:"1.2rem"}, 50)
