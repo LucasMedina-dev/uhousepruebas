@@ -278,3 +278,6 @@ function borrarItem ( array, item ) {
         array.splice( i, 1 );
     }
 
+$(".header_boton").click(function(){
+    $(".header_menu-size").toggle(200)
+})
