@@ -183,7 +183,8 @@ fetch("../js/db.json")
         agregarViviendas(phFiltrado)
         sinResultado() 
     }) 
-    .then($('.propiedades_label').click(()=>{
+    .then(()=>{
+        $('.propiedades_label').click(function(){
             if ($(this).children(".favorito").prop("checked")==true){
                 $(this).children(".propiedades_favorito").children("i").animate({fontSize:"1.5rem"}, 50)
                                                                        .animate({fontSize:"1.2rem"}, 50)
@@ -197,7 +198,7 @@ fetch("../js/db.json")
                 $(this).children(".propiedades_favorito").addClass("propiedades_favorito-false")
             }
         })
-        $(".propiedades_toggle").click(()=>{ 
+        $(".propiedades_toggle").click(function(){ 
             $(this).fadeOut(500)
             $(this).parent().children(".propiedades_informacion").delay(500)
                                                                 .fadeIn(1000)
@@ -231,7 +232,7 @@ fetch("../js/db.json")
             }
             guardarLS("idFav", JSON.stringify(agregados))
         })
-    )
+    })
 
 
 
