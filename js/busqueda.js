@@ -173,7 +173,7 @@ let casaFiltrado=[]
 let departamentoFiltrado=[]
 let phFiltrado=[]
 
-const agregados=JSON.parse(localStorage.getItem("idFav"))
+let agregados=JSON.parse(localStorage.getItem("idFav"))
 if (agregados== null){
     agregados=[]
 }
