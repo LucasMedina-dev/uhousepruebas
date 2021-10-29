@@ -17,12 +17,10 @@ fetch("../js/db.json")
     .then((response) => response.json())
     .then(
     (data) => {
-        casa = data.filter(x => x.tipo == "casa")
-        departamento = data.filter(x => x.tipo == "departamento")
-        ph = data.filter(x => x.tipo == "ph")
-        agregarViviendas(casa)
-        agregarViviendas(departamento)
-        agregarViviendas(ph)
+        idFav.forEach(x => {
+            todos = data.filter(x => x.id == "casa")
+        })
+        agregarViviendas(todos)
         sinResultado() 
     }) 
     .then(()=>{
