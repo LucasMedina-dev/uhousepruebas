@@ -7,6 +7,7 @@ let propiedades= document.getElementsByClassName("propiedades")[0]
 let casa=[]
 let departamento=[]
 let ph=[]
+let todos = casa.concat(departamento).concat(ph)
 
 fetch("../js/db.json")
     .then((response) => response.json())
