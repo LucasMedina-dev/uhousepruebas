@@ -8,6 +8,7 @@ class buscadores{
 
 const filtros =[]
 let moneda= $("#moneda")
+let enviarBusqueda = document.getElementById("enviarBusqueda")
 enviarBusqueda.onclick = (e) =>{
     e.preventDefault()
     filtros.push(new buscadores(busquedaCiudad.value, busquedaMinimo.value, busquedaMaximo.value))
