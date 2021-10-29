@@ -84,8 +84,10 @@ const viviendas= casa.concat(departamento).concat(ph)
 const favoritos=[]
 
 
-const idFav= JSON.parse(localStorage.getItem("idFav"))
-
+let idFav=JSON.parse(localStorage.getItem("idFav"))
+if (idFav== null){
+    idFav=[]
+}
 
 idFav.forEach( function(e) {
     favoritos.push(viviendas.find(x => x.id == e))

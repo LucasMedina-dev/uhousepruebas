@@ -173,9 +173,9 @@ let casaFiltrado=[]
 let departamentoFiltrado=[]
 let phFiltrado=[]
 
-let agregados=JSON.parse(localStorage.getItem("idFav"))
-if (agregados== null){
-    agregados=[]
+let idFav=JSON.parse(localStorage.getItem("idFav"))
+if (idFav== null){
+    idFav=[]
 }
 function borrarItem ( array, item ) {
         var i = array.indexOf( item );
@@ -223,7 +223,7 @@ fetch("../js/db.json")
             }else{
                 agregados.push(id)
             }
-            guardarLS("idFav", JSON.stringify(agregados))
+            guardarLS("idFav", JSON.stringify(idFav))
         })
     })
 
