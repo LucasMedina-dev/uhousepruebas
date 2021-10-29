@@ -71,7 +71,7 @@ fetch("../js/db.json")
         agregarViviendas(casaFiltrado)
         agregarViviendas(departamentoFiltrado)
         agregarViviendas(phFiltrado)
-        sinResultado() 
+        comprobarResultado() 
     }) 
     .then(()=>{
         $('.propiedades_label').click(function(){
@@ -125,7 +125,7 @@ buscadorCasa.onclick= () =>{
         borrar(htmlCasa)
         estado(labelCasa, "desactivado")
     }
-    sinResultado()
+    comprobarResultado()
 }
 buscadorDepartamento.onclick= () =>{
     if (buscadorDepartamento.checked!=false){
@@ -135,7 +135,7 @@ buscadorDepartamento.onclick= () =>{
         borrar(htmlDpto)
         estado(labelDepartamento, "desactivado")
     }
-    sinResultado()
+    comprobarResultado()
 }
 buscadorPh.onclick= () =>{
     if (buscadorPh.checked!=false){
@@ -145,7 +145,7 @@ buscadorPh.onclick= () =>{
         borrar(htmlPh)
         estado(labelPh, "desactivado")
     }
-    sinResultado()
+    comprobarResultado()
 }
 
 

@@ -70,7 +70,7 @@ function estado(label, estado){
     }
 
 }
-function sinResultado(){ 
+function comprobarResultado(){ 
     if (propiedades.innerHTML==""){
         resultado.classList.add("activado")
         resultado.classList.remove("desactivado")
