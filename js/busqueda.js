@@ -55,7 +55,8 @@ fetch("../js/db.json")
     .then((response) => response.json())
     .then(
     (data) => {
-        domicilios= data.filter(x => x.ciudad.toLowerCase()==ciudad && x.precio>precioMinimo && x.precio<precioMaximo)
+        domicilios= data.filter(x => x.ciudad.toLowerCase()===ciudad && x.precio>precioMinimo && x.precio<precioMaximo)
+        domicilios= data.filter(x=> (e)=>{x.ciudad==="casa"})
         agregarViviendas(domicilios)
         comprobarResultado() 
     }) 
@@ -134,7 +135,7 @@ buscadorPh.onclick= () =>{
 
 enviarBusqueda.onclick = (e) =>{
     e.preventDefault()
-    if (busquedaCiudad.value==""){
+    if (busquedaCiudad.value===""){
         busquedaCiudad.classList.add("advertir")
     }else{
         filtros.push(new buscadores(busquedaCiudad.value, busquedaMinimo.value, busquedaMaximo.value))
