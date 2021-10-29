@@ -55,8 +55,7 @@ fetch("../js/db.json")
     .then((response) => response.json())
     .then(
     (data) => {
-        domicilios= data.filter(x => x.ciudad.toLowerCase()===ciudad && x.precio>precioMinimo && x.precio<precioMaximo)
-        domicilios= data.filter(x=> (e)=>{x.ciudad==="casa"})
+        domicilios= data.filter(x => x.ciudad.toLowerCase()===ciudad && x.precio>precioMinimo && x.precio<precioMaximo && x.ciudad==="casa")
         agregarViviendas(domicilios)
         comprobarResultado() 
     }) 
