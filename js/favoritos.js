@@ -50,7 +50,6 @@ fetch("../js/db.json")
             guardarLS("idFav", JSON.stringify(idFav))
         })
     })
-)
 
 const viviendas= casa.concat(departamento).concat(ph)
 const favoritos=[]
