@@ -70,3 +70,13 @@ function estado(label, estado){
     }
 
 }
+function sinResultado(){ 
+    if (propiedades.innerHTML==""){
+        resultado.classList.add("activado")
+        resultado.classList.remove("desactivado")
+    }
+    if (propiedades.innerHTML!=""){
+        resultado.classList.add("desactivado")
+        resultado.classList.remove("activado")
+    }
+}
