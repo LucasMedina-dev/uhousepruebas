@@ -147,7 +147,7 @@ buscadorPh.onclick= () =>{
     }
     comprobarResultado()
 }
-const filtros =[]
+
 enviarBusqueda.onclick = (e) =>{
     e.preventDefault()
     if (busquedaCiudad.value==""){
