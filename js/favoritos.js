@@ -90,7 +90,7 @@ if (idFav== null){
 }
 
 idFav.forEach( function(e) {
-    favoritos.push(viviendas.find(x => x.id == e))
+    favoritos.push(viviendas.find(x => x.id == e.match(/\d+/)[0]))
 });
 
 agregarViviendas(favoritos)
@@ -128,7 +128,7 @@ $('.propiedades_label').click(function(){
 })
 
 idFav.forEach(function (a){
-    let id=$(".propiedades_favorito").attr("id").match(/\d+/)
+    let id=$(".propiedades_favorito").attr("id")
     favoritos.forEach(function (b) {
         if (favoritos.find(x => x.id == a) == b){
             $(this).children(".propiedades_favorito").addClass("propiedades_favorito-true")
