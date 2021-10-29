@@ -43,34 +43,20 @@ let labelDepartamento= document.getElementById("labelDepartamento")
 let labelPh= document.getElementById("labelPh")
 
 
-// variables declaradas para recibir todas las casas departamentos y ph
-let casa=[]
-let departamento=[]
-let ph=[]
-
-// variables declaradas para recibir viviendas filtrados por ciudad y precio
-let casaFiltrado=[]
-let departamentoFiltrado=[]
-let phFiltrado=[]
-
 let idFav=JSON.parse(localStorage.getItem("idFav"))
 if (idFav == null){
     idFav=[]
 }
 
+// variables declaradas para recibir todas las casas departamentos y ph
+let domicilios=[]
+
 fetch("../js/db.json")
     .then((response) => response.json())
     .then(
     (data) => {
-        casa = data.filter(x => x.tipo == "casa")
-        departamento = data.filter(x => x.tipo == "departamento")
-        ph = data.filter(x => x.tipo == "ph")
-        casaFiltrado= casa.filter(casa => casa.ciudad.toLowerCase()==ciudad && casa.precio>precioMinimo && casa.precio<precioMaximo)
-        departamentoFiltrado= departamento.filter(departamento => departamento.ciudad.toLowerCase()==ciudad && departamento.precio>precioMinimo && departamento.precio<precioMaximo)
-        phFiltrado= ph.filter(ph => ph.ciudad.toLowerCase()==ciudad && ph.precio>precioMinimo && ph.precio<precioMaximo)
-        agregarViviendas(casaFiltrado)
-        agregarViviendas(departamentoFiltrado)
-        agregarViviendas(phFiltrado)
+        domicilios= data.filter(x => x.ciudad.toLowerCase()==ciudad && x.precio>precioMinimo && x.precio<precioMaximo)
+        agregarViviendas(domicilios)
         comprobarResultado() 
     }) 
     .then(()=>{
@@ -114,8 +100,6 @@ fetch("../js/db.json")
 buscadorCasa.checked=true
 buscadorPh.checked=true
 buscadorDepartamento.checked=true
-
-const tipos=[]
 
 buscadorCasa.onclick= () =>{
     if (buscadorCasa.checked!=false){
