@@ -5,7 +5,7 @@ let propiedades= document.getElementsByClassName("propiedades")[0]
 
 
 let favoritos=[]// Acá se van a guardar las viviendas que coincidan en id con las id del localStorage
-let idFav=JSON.parse(localStorage.getItem("idFav")) // ---- Paso 1
+let idFav=JSON.parse(localStorage.getItem("idFav")) // Se toma el array de LS para trabajar sobre ella sin sobreescribir
 if (idFav == null){
     idFav=[]
 }
@@ -22,8 +22,8 @@ fetch("../js/db.json")
         }
         
     }) 
-    .then(()=>{
-        $('.propiedades_label').click(function(){
+    .then(()=>{ 
+        $('.propiedades_label').click(function(){ //Efecto al apretar boton de favorito
             if ($(this).children(".favorito").prop("checked")==true){
                 $(this).children(".propiedades_favorito").children("i").animate({fontSize:"1.5rem"}, 50)
                                                                        .animate({fontSize:"1.2rem"}, 50)
@@ -37,21 +37,21 @@ fetch("../js/db.json")
                 $(this).children(".propiedades_favorito").addClass("propiedades_favorito-false")
             }
         })
-        $(".propiedades_toggle").click(function(){ 
+        $(".propiedades_toggle").click(function(){ // Efecto al hacer click en informacion de la vivienda
             $(this).fadeOut(500)
             $(this).parent().children(".propiedades_informacion").delay(500)
                                                                 .fadeIn(1000)
         })
         $(".propiedades_favorito").click(function(){
             let id= $(this).attr("id")
-            let fl=id.charAt(0)     //Esto lee la primer letra del id (fl= first letter)
             let n=id.match(/\d+/)[0]//Esto lee los numeros del id
-            if (idFav.find(x => x == n)){
+
+            if (idFav.find(x => x == n)){ // Si hago click y la id se encuentra en el array, la borro, caso contrario se agrega
                 borrarItem(idFav, n)
             }else{
                 idFav.push(n)
             }
-            guardarLS("idFav", JSON.stringify(idFav))
+            guardarLS("idFav", JSON.stringify(idFav)) //Finalmente se guarda el LS el array modificado
         })
     })
 

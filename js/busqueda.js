@@ -147,7 +147,18 @@ buscadorPh.onclick= () =>{
     }
     comprobarResultado()
 }
-
+const filtros =[]
+enviarBusqueda.onclick = (e) =>{
+    e.preventDefault()
+    if (busquedaCiudad.value==""){
+        busquedaCiudad.classList.add("advertir")
+    }else{
+        filtros.push(new buscadores(busquedaCiudad.value, busquedaMinimo.value, busquedaMaximo.value))
+        const filtradores=JSON.stringify(filtros)
+        guardarLS("filtros", filtradores)
+        ejecutarBusqueda()
+    }
+}
 
 
 $(".header_boton").click(function(){
