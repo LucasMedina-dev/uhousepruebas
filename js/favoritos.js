@@ -1,6 +1,6 @@
 $(".header_boton").click(function(){
     $(".header_menu-size").toggle(200)
-}
+})
 let propiedades= document.getElementsByClassName("propiedades")[0]
 
 fetch("../js/db.json")
