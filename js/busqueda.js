@@ -25,16 +25,7 @@ function ejecutarBusqueda() {
 }
 // Si no hay resultados para la busqueda se ejecuta esto
 let resultado = document.getElementById("resultado")
-function sinResultado(){ 
-    if (propiedades.innerHTML==""){
-        resultado.classList.add("activado")
-        resultado.classList.remove("desactivado")
-    }
-    if (propiedades.innerHTML!=""){
-        resultado.classList.add("desactivado")
-        resultado.classList.remove("activado")
-    }
-}
+
 
 //---------------------------------------------------//
 
