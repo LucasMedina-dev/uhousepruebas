@@ -178,9 +178,9 @@ if (idFav == null){
     idFav=[]
 }
 function borrarItem ( array, item ) {
-        var i = array.indexOf( item );
-        array.splice( i, 1 );
-    }
+    var i = array.indexOf( item );
+    array.splice( i, 1 );
+}
 fetch("../js/db.json")
     .then((response) => response.json())
     .then(
