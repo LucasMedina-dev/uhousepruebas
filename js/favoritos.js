@@ -3,9 +3,8 @@ $(".header_boton").click(function(){
 })
 let propiedades= document.getElementsByClassName("propiedades")[0]
 
-// variables declaradas para recibir todas las casas departamentos y ph
-let todos =[]
-let favoritos=[]
+
+let favoritos=[]// Acá se van a guardar las viviendas que coincidan en id con las id del localStorage
 let idFav=JSON.parse(localStorage.getItem("idFav"))
 if (idFav == null){
     idFav=[]
@@ -17,9 +16,10 @@ fetch("../js/db.json")
         idFav.forEach( function(e) {
             favoritos.push(data.find(x => x.id == e))
         });
-
         agregarViviendas(favoritos)
-
+        if (favoritos == []){
+            sinResultado()
+        }
     }) 
     .then(()=>{
         $('.propiedades_label').click(function(){
