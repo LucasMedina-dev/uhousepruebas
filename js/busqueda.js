@@ -220,28 +220,10 @@ fetch("../js/db.json")
             let id= $(this).attr("id")
             let fl=id.charAt(0)     //Esto lee la primer letra del id (fl= first letter)
             let n=id.match(/\d+/)[0]//Esto lee los numeros del id
-            switch(fl){
-                case "c":
-                    if (idFav.find(x => x == n)){
-                        borrarItem(idFav, n)
-                    }else{
-                        idFav.push(n)
-                    }
-                break;
-                case "d":
-                    if (idFav.find(x => x == n)){
-                        borrarItem(idFav, n)
-                    }else{
-                        idFav.push(n)
-                    }
-                break;
-                case "p":
-                    if (idFav.find(x => x == n)){
-                        borrarItem(idFav, n)
-                    }else{
-                        idFav.push(n)
-                    }
-                break;
+            if (idFav.find(x => x == n)){
+                borrarItem(idFav, n)
+            }else{
+                idFav.push(n)
             }
             guardarLS("idFav", JSON.stringify(idFav))
         })
