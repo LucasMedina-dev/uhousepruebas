@@ -174,7 +174,6 @@ let departamentoFiltrado=[]
 let phFiltrado=[]
 
 const agregados=JSON.parse(localStorage.getItem("idFav"))
-const favoritos=[]
 function borrarItem ( array, item ) {
         var i = array.indexOf( item );
         array.splice( i, 1 );
@@ -216,30 +215,10 @@ fetch("../js/db.json")
         })
         $(".propiedades_favorito").click(function(){
             let id= $(this).attr("id")
-            let fl=id.charAt(0)     //Esto lee la primer letra del id (fl= first letter)
-            let n=id.match(/\d+/)[0]//Esto lee los numeros del id
-            switch(fl){
-                case "c":
-                    if (agregados.find(x => x == n)){
-                        borrarItem(agregados, n)
-                    }else{
-                        agregados.push(n)
-                    }
-                break;
-                case "d":
-                    if (agregados.find(x => x == n)){
-                        borrarItem(agregados, n)
-                    }else{
-                        agregados.push(n)
-                    }
-                break;
-                case "p":
-                    if (agregados.find(x => x == n)){
-                        borrarItem(agregados, n)
-                    }else{
-                        agregados.push(n)
-                    }
-                break;
+            if (agregados.find(x => x == id)){
+                borrarItem(agregados, id)
+            }else{
+                agregados.push(id)
             }
             guardarLS("idFav", JSON.stringify(agregados))
         })

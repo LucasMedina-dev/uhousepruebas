@@ -102,35 +102,12 @@ function guardarLS(clave, valor){
 }
 $(".propiedades_favorito").click(function(){
     let id= $(this).attr("id")
-    let fl=id.charAt(0)
-    let sl=id.match(/\d+/)[0]
-    switch(fl){
-        case "c":
-
-            if (agregados.find(x => x == sl)){
-                borrarItem(agregados, sl)
-            }else{
-                agregados.push(sl)
-            }
-            
-        break;
-        case "d":
-            if (agregados.find(x => x == sl)){
-                borrarItem(agregados, sl)
-            }else{
-                agregados.push(sl)
-            }
-        break;
-        case "p":
-            if (agregados.find(x => x == sl)){
-                borrarItem(agregados, sl)
-            }else{
-                agregados.push(sl)
-            }
-        break;
+    if (agregados.find(x => x == id)){
+        borrarItem(agregados, id)
+    }else{
+        agregados.push(id)
     }
     guardarLS("idFav", JSON.stringify(agregados))
-    
 })
 
 $('.propiedades_label').click(function(){
