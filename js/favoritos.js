@@ -3,6 +3,16 @@ $(".header_boton").click(function(){
 })
 let propiedades= document.getElementsByClassName("propiedades")[0]
 
+// variables declaradas para recibir todas las casas departamentos y ph
+let casa=[]
+let departamento=[]
+let ph=[]
+
+// variables declaradas para recibir viviendas filtrados por ciudad y precio
+let casaFiltrado=[]
+let departamentoFiltrado=[]
+let phFiltrado=[]
+
 fetch("../js/db.json")
     .then((response) => response.json())
     .then(
