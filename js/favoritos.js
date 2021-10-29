@@ -90,7 +90,7 @@ if (idFav == null){
 }
 
 idFav.forEach( function(e) {
-    favoritos.push(viviendas.find(x => x.id == e.match(/\d+/)[0]))
+    favoritos.push(viviendas.find(x => x.id == e))
 });
 
 agregarViviendas(favoritos)
