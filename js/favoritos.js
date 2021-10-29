@@ -102,6 +102,10 @@ $(".propiedades_toggle").click(function(){
 function guardarLS(clave, valor){
     localStorage.setItem(clave, valor)
 }
+function borrarItem ( array, item ) {
+    var i = array.indexOf( item );
+    array.splice( i, 1 );
+}
 $(".propiedades_favorito").click(function(){
     let id= $(this).attr("id")
     let fl=id.charAt(0)     //Esto lee la primer letra del id (fl= first letter)
