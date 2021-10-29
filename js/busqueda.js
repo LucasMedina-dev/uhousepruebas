@@ -218,12 +218,17 @@ fetch("../js/db.json")
         })
         $(".propiedades_favorito").click(function(){
             let id= $(this).attr("id")
-            if (idFav.find(x => x == id)){
-                borrarItem(idFav, id)
-            }else{
-                idFav.push(id)
-            }
-            guardarLS("idFav", JSON.stringify(idFav))
+            let fl=id.charAt(0)     //Esto lee la primer letra del id (fl= first letter)
+            let n=id.match(/\d+/)[0]//Esto lee los numeros del id
+            $(".propiedades_favorito").click(function(){
+                let id= $(this).attr("id")
+                if (agregados.find(x => x == id)){
+                    borrarItem(agregados, id)
+                }else{
+                    agregados.push(id)
+                }
+                guardarLS("idFav", JSON.stringify(agregados))
+            })
         })
     })
 
