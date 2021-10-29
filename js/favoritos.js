@@ -13,7 +13,7 @@ fetch("../js/db.json")
     .then(
     (data) => {
         idFav.forEach(id => {
-            todos = data.find(x => x.id == id)
+            todos += data.find(x => x.id == id)
         })
         agregarViviendas(todos)
         sinResultado() 
