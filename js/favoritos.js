@@ -8,17 +8,12 @@ let casa=[]
 let departamento=[]
 let ph=[]
 
-// variables declaradas para recibir viviendas filtrados por ciudad y precio
-let casaFiltrado=[]
-let departamentoFiltrado=[]
-let phFiltrado=[]
-
 fetch("../js/db.json")
     .then((response) => response.json())
     .then(
     (data) => {
-        idFav.forEach(x => {
-            todos = data.filter(x => x.id == "casa")
+        idFav.forEach(id => {
+            todos = data.find(x => x.id == id)
         })
         agregarViviendas(todos)
         sinResultado() 
