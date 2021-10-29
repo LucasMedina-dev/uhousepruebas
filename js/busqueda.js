@@ -173,10 +173,7 @@ let casaFiltrado=[]
 let departamentoFiltrado=[]
 let phFiltrado=[]
 
-let idFav=JSON.parse(localStorage.getItem("idFav"))
-if (idFav== null){
-    idFav=[]
-}
+const agregados=JSON.parse(localStorage.getItem("idFav"))
 function borrarItem ( array, item ) {
         var i = array.indexOf( item );
         array.splice( i, 1 );
@@ -218,15 +215,32 @@ fetch("../js/db.json")
         })
         $(".propiedades_favorito").click(function(){
             let id= $(this).attr("id")
-            $(".propiedades_favorito").click(function(){
-                let id= $(this).attr("id")
-                if (idFav.find(x => x == id)){
-                    borrarItem(idFav, id)
-                }else{
-                    idFav.push(id)
-                }
-                guardarLS("idFav", JSON.stringify(idFav))
-            })
+            let fl=id.charAt(0)     //Esto lee la primer letra del id (fl= first letter)
+            let n=id.match(/\d+/)[0]//Esto lee los numeros del id
+            switch(fl){
+                case "c":
+                    if (agregados.find(x => x == n)){
+                        borrarItem(agregados, n)
+                    }else{
+                        agregados.push(n)
+                    }
+                break;
+                case "d":
+                    if (agregados.find(x => x == n)){
+                        borrarItem(agregados, n)
+                    }else{
+                        agregados.push(n)
+                    }
+                break;
+                case "p":
+                    if (agregados.find(x => x == n)){
+                        borrarItem(agregados, n)
+                    }else{
+                        agregados.push(n)
+                    }
+                break;
+            }
+            guardarLS("idFav", JSON.stringify(agregados))
         })
     })
 
