@@ -173,12 +173,10 @@ let casaFiltrado=[]
 let departamentoFiltrado=[]
 let phFiltrado=[]
 
-if (!agregados){
-    const agregados=JSON.parse(localStorage.getItem("idFav"))
-}else{
-    const agregados=[]
+const agregados=JSON.parse(localStorage.getItem("idFav"))
+if (agregados== null){
+    agregados=[]
 }
-
 function borrarItem ( array, item ) {
         var i = array.indexOf( item );
         array.splice( i, 1 );
