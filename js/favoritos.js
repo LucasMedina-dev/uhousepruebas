@@ -85,7 +85,7 @@ const favoritos=[]
 
 
 let idFav=JSON.parse(localStorage.getItem("idFav"))
-if (idFav== null){
+if (idFav == null){
     idFav=[]
 }
 

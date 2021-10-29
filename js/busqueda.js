@@ -173,7 +173,10 @@ let casaFiltrado=[]
 let departamentoFiltrado=[]
 let phFiltrado=[]
 
-const idFav=JSON.parse(localStorage.getItem("idFav"))
+let idFav=JSON.parse(localStorage.getItem("idFav"))
+if (idFav == null){
+    idFav=[]
+}
 function borrarItem ( array, item ) {
         var i = array.indexOf( item );
         array.splice( i, 1 );
