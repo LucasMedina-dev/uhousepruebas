@@ -104,12 +104,12 @@ function guardarLS(clave, valor){
 }
 $(".propiedades_favorito").click(function(){
     let id= $(this).attr("id")
-    if (agregados.find(x => x == id)){
-        borrarItem(agregados, id)
+    if (idFav.find(x => x == id)){
+        borrarItem(idFav, id)
     }else{
-        agregados.push(id)
+        idFav.push(id)
     }
-    guardarLS("idFav", JSON.stringify(agregados))
+    guardarLS("idFav", JSON.stringify(idFav))
 })
 
 $('.propiedades_label').click(function(){
