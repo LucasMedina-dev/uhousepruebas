@@ -4,10 +4,7 @@ $(".header_boton").click(function(){
 let propiedades= document.getElementsByClassName("propiedades")[0]
 
 // variables declaradas para recibir todas las casas departamentos y ph
-let casa=[]
-let departamento=[]
-let ph=[]
-let todos = casa.concat(departamento).concat(ph)
+let todos =[]
 
 fetch("../js/db.json")
     .then((response) => response.json())
