@@ -173,7 +173,7 @@ let casaFiltrado=[]
 let departamentoFiltrado=[]
 let phFiltrado=[]
 
-const agregados=JSON.parse(localStorage.getItem("idFav"))
+const idFav=JSON.parse(localStorage.getItem("idFav"))
 function borrarItem ( array, item ) {
         var i = array.indexOf( item );
         array.splice( i, 1 );
@@ -219,28 +219,28 @@ fetch("../js/db.json")
             let n=id.match(/\d+/)[0]//Esto lee los numeros del id
             switch(fl){
                 case "c":
-                    if (agregados.find(x => x == n)){
-                        borrarItem(agregados, n)
+                    if (idFav.find(x => x == n)){
+                        borrarItem(idFav, n)
                     }else{
-                        agregados.push(n)
+                        idFav.push(n)
                     }
                 break;
                 case "d":
-                    if (agregados.find(x => x == n)){
-                        borrarItem(agregados, n)
+                    if (idFav.find(x => x == n)){
+                        borrarItem(idFav, n)
                     }else{
-                        agregados.push(n)
+                        idFav.push(n)
                     }
                 break;
                 case "p":
-                    if (agregados.find(x => x == n)){
-                        borrarItem(agregados, n)
+                    if (idFav.find(x => x == n)){
+                        borrarItem(idFav, n)
                     }else{
-                        agregados.push(n)
+                        idFav.push(n)
                     }
                 break;
             }
-            guardarLS("idFav", JSON.stringify(agregados))
+            guardarLS("idFav", JSON.stringify(idFav))
         })
     })
 
