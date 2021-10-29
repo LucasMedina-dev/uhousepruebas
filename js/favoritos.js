@@ -5,7 +5,7 @@ let propiedades= document.getElementsByClassName("propiedades")[0]
 
 
 let favoritos=[]// Acá se van a guardar las viviendas que coincidan en id con las id del localStorage
-let idFav=JSON.parse(localStorage.getItem("idFav"))
+let idFav=JSON.parse(localStorage.getItem("idFav")) // ---- Paso 1
 if (idFav == null){
     idFav=[]
 }
@@ -17,9 +17,10 @@ fetch("../js/db.json")
             favoritos.push(data.find(x => x.id == e))
         });
         agregarViviendas(favoritos)
-        if (favoritos == []){
-            sinResultado()
+        if (favoritos.length===0){
+            comprobarResultado()
         }
+        
     }) 
     .then(()=>{
         $('.propiedades_label').click(function(){
@@ -55,7 +56,27 @@ fetch("../js/db.json")
     })
 
 
+//Favoritos
 
+/*
+¿ Como funcionan los favoritos?
+Caso de no tener favoritos= Si no hay favoritos agregados se crea un array vacio, esto se hace para evitar un error del codigo
+y que no se interrumpa el proceso de javascript
+
+Caso de tener favoritos= Tenemos las viviendas agregadas desde busquedas, desde esta pagina yo puedo borrar la vivienda y en caso
+de arrepentimiento puedo volver a agregarla, la funcion lo que hace es leer la id de la vivienda seleccionada
+Se lee la primer letra C=casa D=departamento P=ph, luego se hace un match para tomar todos los numeros del id que posteriormente se
+comparan con las id guardadas en localStorage, se verifica la compatibilidad mediante data.find, esto se hace para cada id del LS 
+con el uso de forEach. Luego de hacer la comparacion, se agregan las viviendas marcadas mediante la funcion agregarViviendas()
+
+Se tuvo en cuenta como primer paso guardar en un array los valores del LS y escribir sobre ese array para mantener los datos sin 
+que se sobreescriban
+
+
+
+
+
+*/
 
 
 
