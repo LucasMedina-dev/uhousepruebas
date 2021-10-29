@@ -19,9 +19,6 @@ $.get(apiConversor, function(respuesta, sucess){
     }
 } )
 
-
-let enviarBusqueda = document.getElementById("enviarBusqueda")
-
 function ejecutarBusqueda() {
     window.open("busquedas.html", "_self");
     
