@@ -55,7 +55,7 @@ fetch("../js/db.json")
     .then((response) => response.json())
     .then(
     (data) => {
-        domicilios= data.filter(x=> x.tipo ==="casa" && x.tipo==="departamento")
+        domicilios= data.filter(x=> x.tipo ==="casa" || x.tipo==="departamento")
         let final= domicilios.filter(x => x.ciudad.toLowerCase()===ciudad && x.precio>precioMinimo && x.precio<precioMaximo)
 
         agregarViviendas(final)
