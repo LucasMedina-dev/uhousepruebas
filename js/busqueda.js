@@ -47,7 +47,7 @@ fetch("../js/db.json")
     .then(
     (data) => {
         let tipo= ["casa", "departamentos","ph"]
-        domicilios= data.filter(x=> tipo.forEach(y=> x.tipo===y))
+        domicilios= data.filter(x=> x.tipo===tipo[0] || x.tipo===tipo[1] || x.tipo===tipo[2])
         let final= domicilios.filter(x => x.ciudad.toLowerCase()===ciudad && x.precio>precioMinimo && x.precio<precioMaximo)
 
         agregarViviendas(final)
