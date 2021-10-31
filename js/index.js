@@ -7,7 +7,6 @@ function guardarLS(clave, valor){
 let apiConversor= "https://www.dolarsi.com/api/api.php?type=valoresprincipales"
 $.get(apiConversor, function(respuesta, sucess){
     let dolar=respuesta
-    $(sucess).ready()
     $("header").append(`
         <div class="header_cotizaciones" style="display:none">
             <ul class="header_cotizaciones-liststyle">
@@ -37,9 +36,6 @@ class buscadores{
         this.minimo=precioMinimo;
         this.maximo=precioMaximo;
     }
-}
-busquedaCiudad.onchange= () =>{
-    busquedaCiudad.classList.remove("advertir")
 }
 $(".header_boton").click(function(){
     $(".header_menu-size").toggle(200)
