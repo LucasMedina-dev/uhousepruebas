@@ -8,6 +8,9 @@ class buscadores{
 
 const filtros =[]
 let moneda= $("#moneda")
+let busquedaCiudad = document.getElementById("busquedaCiudad")
+let busquedaMinimo = document.getElementById("busquedaMinimo")
+let busquedaMaximo = document.getElementById("busquedaMaximo")
 let enviarBusqueda = document.getElementById("enviarBusqueda")
 
 enviarBusqueda.onclick = (e) =>{

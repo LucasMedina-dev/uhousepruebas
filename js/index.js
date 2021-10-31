@@ -1,9 +1,6 @@
 function ejecutarBusqueda() {
     window.open("pages/busquedas.html", "_self");        
 }
-function guardarLS(clave, valor){
-    localStorage.setItem(clave, valor)
-}
 let apiConversor= "https://www.dolarsi.com/api/api.php?type=valoresprincipales"
 $.get(apiConversor, function(respuesta, sucess){
     let dolar=respuesta
@@ -26,10 +23,6 @@ $.get(apiConversor, function(respuesta, sucess){
         $(".header_cotizaciones").fadeIn(500)
     }
 })
-let busquedaCiudad = document.getElementById("busquedaCiudad")
-let busquedaMinimo = document.getElementById("busquedaMinimo")
-let busquedaMaximo = document.getElementById("busquedaMaximo")
-let enviarBusqueda = document.getElementById("enviarBusqueda")
 class buscadores{
     constructor(ciudad, precioMinimo, precioMaximo){
         this.ciudad=ciudad;
