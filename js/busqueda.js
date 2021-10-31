@@ -32,15 +32,6 @@ let resultado = document.getElementById("resultado")
 
 let main = document.getElementById("main")
 let propiedades= document.getElementsByClassName("propiedades")[0]
-let buscadorCasa= document.getElementById("casa")
-let buscadorDepartamento= document.getElementById("departamento")
-let buscadorPh=document.getElementById("ph")
-let htmlCasa = document.getElementsByClassName("casa")
-let htmlDpto = document.getElementsByClassName("departamento")
-let htmlPh = document.getElementsByClassName("ph")
-let labelCasa= document.getElementById("labelCasa")
-let labelDepartamento= document.getElementById("labelDepartamento")
-let labelPh= document.getElementById("labelPh")
 
 
 let idFav=JSON.parse(localStorage.getItem("idFav"))
@@ -95,58 +86,44 @@ fetch("../js/db.json")
     })
 
 
-
-// Buscador por Casa, Departamento o PH
-
-
-buscadorCasa.checked=true
-buscadorPh.checked=true
-buscadorDepartamento.checked=true
-
-buscadorCasa.onclick= () =>{
-    if (buscadorCasa.checked!=false){
-        agregarViviendas(casaFiltrado)
-        estado(labelCasa, "activado")
-    }else{
-        borrar(htmlCasa)
-        estado(labelCasa, "desactivado")
-    }
-    comprobarResultado()
-}
-buscadorDepartamento.onclick= () =>{
-    if (buscadorDepartamento.checked!=false){
-        agregarViviendas(departamentoFiltrado)
-        estado(labelDepartamento, "activado")
-    }else{
-        borrar(htmlDpto)
-        estado(labelDepartamento, "desactivado")
-    }
-    comprobarResultado()
-}
-buscadorPh.onclick= () =>{
-    if (buscadorPh.checked!=false){
-        agregarViviendas(phFiltrado)
-        estado(labelPh, "activado")
-    }else{
-        borrar(htmlPh)
-        estado(labelPh, "desactivado")
-    }
-    comprobarResultado()
-}
-
-enviarBusqueda.onclick = (e) =>{
-    e.preventDefault()
-    if (busquedaCiudad.value===""){
-        busquedaCiudad.classList.add("advertir")
-    }else{
-        filtros.push(new buscadores(busquedaCiudad.value, busquedaMinimo.value, busquedaMaximo.value))
-        const filtradores=JSON.stringify(filtros)
-        guardarLS("filtros", filtradores)
-        ejecutarBusqueda()
-    }
-}
-
-
 $(".header_boton").click(function(){
     $(".header_menu-size").toggle(200)
 })
+// Buscador por Casa, Departamento o PH
+
+
+//buscadorCasa.checked=true
+//buscadorPh.checked=true
+//buscadorDepartamento.checked=true
+//
+//buscadorCasa.onclick= () =>{
+//    if (buscadorCasa.checked!=false){
+//        agregarViviendas(casaFiltrado)
+//        estado(labelCasa, "activado")
+//    }else{
+//        borrar(htmlCasa)
+//        estado(labelCasa, "desactivado")
+//    }
+//    comprobarResultado()
+//}
+//buscadorDepartamento.onclick= () =>{
+//    if (buscadorDepartamento.checked!=false){
+//        agregarViviendas(departamentoFiltrado)
+//        estado(labelDepartamento, "activado")
+//    }else{
+//        borrar(htmlDpto)
+//        estado(labelDepartamento, "desactivado")
+//    }
+//    comprobarResultado()
+//}
+//buscadorPh.onclick= () =>{
+//    if (buscadorPh.checked!=false){
+//        agregarViviendas(phFiltrado)
+//        estado(labelPh, "activado")
+//    }else{
+//        borrar(htmlPh)
+//        estado(labelPh, "desactivado")
+//    }
+//    comprobarResultado()
+//}
+
