@@ -23,13 +23,6 @@ $.get(apiConversor, function(respuesta, sucess){
         $(".header_cotizaciones").fadeIn(500)
     }
 })
-class buscadores{
-    constructor(ciudad, precioMinimo, precioMaximo){
-        this.ciudad=ciudad;
-        this.minimo=precioMinimo;
-        this.maximo=precioMaximo;
-    }
-}
 $(".header_boton").click(function(){
     $(".header_menu-size").toggle(200)
 })
