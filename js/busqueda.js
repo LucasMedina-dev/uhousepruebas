@@ -23,24 +23,19 @@ function ejecutarBusqueda() {
     window.open("busquedas.html", "_self");
     
 }
-// Si no hay resultados para la busqueda se ejecuta esto
-let resultado = document.getElementById("resultado")
-
-
-//---------------------------------------------------//
-
-
-let main = document.getElementById("main")
+let resultado = document.getElementById("resultado") // elemento creado para ejecutar funcion comprobarBusqueda() que se ejecuta si no hay resultados
 let propiedades= document.getElementsByClassName("propiedades")[0]
 
-
+// Aca se guardan los favoritos y los tipos de vivienda que se buscan
 let idFav=JSON.parse(localStorage.getItem("idFav"))
 if (idFav == null){
     idFav=[]
 }
 let tipos=JSON.parse(localStorage.getItem("tipos"))
-// variables declaradas para recibir todas las casas departamentos y ph
-let domicilios=[]
+//-------------------------------------------------------------------
+
+
+let domicilios=[] // variable declarada para recibir todas las casas departamentos y ph
 
 let orden
 $("#orden").change(()=>{

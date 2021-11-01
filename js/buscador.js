@@ -52,8 +52,20 @@ $(".true_label").click(function(){
         tipos.push($(this).attr("for"))
     }else{
         $(this).removeClass("activado")
-        $(this).addClass("desactivado")
+        $(this)
         borrarItem(tipos, $(this).attr("for"))
     }
     guardarLS("tipos", JSON.stringify(tipos))
+})
+
+
+
+tipos.forEach(x=> {
+    switch (x){
+        case "casa":
+            ${"label[for='casa']"}.removeClass("activado")
+                                    .addClass("desactivado")
+        break;
+
+    }
 })
