@@ -1,16 +1,7 @@
-$(".true_label").click(function(){
-    if ($(this).hasClass("desactivado")){
-        $(this).removeClass("desactivado")
-        $(this).addClass("activado")
-        tipos.push($(this).attr("for"))
-    }else{
-        $(this).removeClass("activado")
-        $(this).addClass("desactivado")
-        borrarItem(tipos, $(this).attr("for"))
-    }
-    
-    guardarLS("tipos", JSON.stringify(tipos))
-})
+let tipos=JSON.parse(localStorage.getItem("tipos"))
+if (tipos === null){
+    tipos=["casa", "departamento", "ph"]
+}
 
 class buscadores{
     constructor(ciudad, precioMinimo, precioMaximo){
@@ -29,9 +20,7 @@ let enviarBusqueda = document.getElementById("enviarBusqueda")
 enviarBusqueda.onclick = (e) =>{
     e.preventDefault()
     guardarLS("moneda", moneda.val())
-    if (tipos == null){
-        $(".tipos").addClass("advertir")
-    }if (busquedaCiudad.value==""){
+    if (busquedaCiudad.value==""){
         busquedaCiudad.classList.add("advertir")
     }else{
         filtros.push(new buscadores(busquedaCiudad.value, busquedaMinimo.value, busquedaMaximo.value))
@@ -59,5 +48,17 @@ if (isNaN(precioMaximo)) {
     precioMaximo=9999999
 }
 
+$(".true_label").click(function(){
+    if ($(this).hasClass("desactivado")){
+        $(this).removeClass("desactivado")
+        $(this).addClass("activado")
+        tipos.push($(this).attr("for"))
+    }else{
+        $(this).removeClass("activado")
+        $(this).addClass("desactivado")
+        borrarItem(tipos, $(this).attr("for"))
+    }
+    guardarLS("tipos", JSON.stringify(tipos))
+})
 
 
