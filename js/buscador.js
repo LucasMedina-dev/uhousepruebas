@@ -52,7 +52,7 @@ $(".true_label").click(function(){
         tipos.push($(this).attr("for"))
     }else{
         $(this).removeClass("activado")
-        $(this)
+        $(this).addClass("desactivado")
         borrarItem(tipos, $(this).attr("for"))
     }
     guardarLS("tipos", JSON.stringify(tipos))
