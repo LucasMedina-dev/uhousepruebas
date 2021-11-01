@@ -32,4 +32,4 @@ $("#boton").click(()=>{
     $(".false").toggle(300)
 })
 tipos=["casa", "departamento", "ph"]
-guardarLS("tipos", tipos)
+guardarLS("tipos", JSON.stringify(tipos))
