@@ -11,14 +11,13 @@ let busquedaCiudad = document.getElementById("busquedaCiudad")
 let busquedaMinimo = document.getElementById("busquedaMinimo")
 let busquedaMaximo = document.getElementById("busquedaMaximo")
 let enviarBusqueda = document.getElementById("enviarBusqueda")
-let tipos
+let tipos=JSON.parse(localStorage.getItem("tipos"))
 enviarBusqueda.onclick = (e) =>{
     e.preventDefault()
     guardarLS("moneda", moneda.val())
     if (busquedaCiudad.value==""){
         busquedaCiudad.classList.add("advertir")
     }else{
-        tipos=JSON.parse(localStorage.getItem("tipos"))
         if (tipos === null){
             tipos=["casa", "departamento", "ph"]
             guardarLS("tipos", JSON.stringify(tipos))
