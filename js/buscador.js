@@ -60,12 +60,3 @@ $(".true_label").click(function(){
 
 
 
-tipos.forEach(x=> {
-    switch (x){
-        case "casa":
-            ${"label[for='casa']"}.removeClass("activado")
-                                    .addClass("desactivado")
-        break;
-
-    }
-})
