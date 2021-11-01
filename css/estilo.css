@@ -31,6 +31,7 @@ input[type=number] { -moz-appearance:textfield; }
   border: none;
   position: absolute;
   left: 0;
+  z-index: 2000;
 }
 .header_menu-size{
 	height: 300px;
