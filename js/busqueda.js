@@ -90,6 +90,8 @@ fetch("../js/db.json")
 $(".header_boton").click(function(){
     $(".header_menu-size").toggle(200)
 })
+let tipos=tomarLS("tipos")
+guardarLS("tipos", tipos)
 // Buscador por Casa, Departamento o PH
 
 
