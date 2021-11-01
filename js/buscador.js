@@ -11,16 +11,12 @@ let busquedaCiudad = document.getElementById("busquedaCiudad")
 let busquedaMinimo = document.getElementById("busquedaMinimo")
 let busquedaMaximo = document.getElementById("busquedaMaximo")
 let enviarBusqueda = document.getElementById("enviarBusqueda")
-let tipos=JSON.parse(localStorage.getItem("tipos"))
 enviarBusqueda.onclick = (e) =>{
     e.preventDefault()
     guardarLS("moneda", moneda.val())
     if (busquedaCiudad.value==""){
         busquedaCiudad.classList.add("advertir")
     }else{
-        if (tipos === null){
-            tipos=["casa", "departamento", "ph"]
-        }
         guardarLS("tipos", JSON.stringify(tipos))
         filtros.push(new buscadores(busquedaCiudad.value, busquedaMinimo.value, busquedaMaximo.value))
         const filtradores=JSON.stringify(filtros)
@@ -40,6 +36,7 @@ $(".true_label").click(function(){
         $(this).addClass("desactivado")
         borrarItem(tipos, $(this).attr("for"))
     }
+    guardarLS("tipos", tipos)
 })
 
 
