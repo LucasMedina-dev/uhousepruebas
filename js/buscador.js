@@ -45,25 +45,18 @@ if (isNaN(precioMaximo)) {
     precioMaximo=9999999
 }
 let tipos=["casa", "departamento", "ph"]
-
+guardarLS("tipos", tipos)
 
 $(".true_label").click(function(){
     if ($(this).hasClass("desactivado")){
         $(this).removeClass("desactivado")
         $(this).addClass("activado")
+        tipos.push($(this).attr("for"))
     }else{
         $(this).removeClass("activado")
         $(this).addClass("desactivado")
+        borrarItem(tipos, $(this).attr("for"))
     }
-    
+    guardarLS("tipos", tipos)
 })
-
-$(".true_label").click(function(){
-
-
-
-    console.log($(this).attr("for"))
-})
-
-guardarLS("tipos", tipos)
 
