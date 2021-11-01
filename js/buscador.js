@@ -55,6 +55,9 @@ $(".true_label").click(function(){
         $(this).addClass("desactivado")
         borrarItem(tipos, $(this).attr("for"))
     }
+    if (tipos == null){
+        $(".tipos").addClass("advertir")
+    }
     guardarLS("tipos", JSON.stringify(tipos))
 })
 
