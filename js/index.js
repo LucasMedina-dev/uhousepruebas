@@ -31,5 +31,5 @@ $(".header_boton").click(function(){
 $("#boton").click(()=>{
     $(".false").toggle(300)
 })
-tipos=["casa", "departamentos", "ph"]
+tipos=["casa", "departamento", "ph"]
 guardarLS("tipos", JSON.stringify(tipos))
