@@ -39,7 +39,6 @@ if (idFav == null){
     idFav=[]
 }
 let tipos=tomarLS("tipos")
-guardarLS("tipos", tipos)
 // variables declaradas para recibir todas las casas departamentos y ph
 let domicilios=[]
 
