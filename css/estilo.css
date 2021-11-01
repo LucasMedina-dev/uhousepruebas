@@ -265,6 +265,7 @@ input[type=number] { -moz-appearance:textfield; }
 	background-color: rgba(140, 130, 122, 1.0);
 	text-align: center;
 	border-radius: 0 5px 5px 0;
+	margin-right: 5px;
 }
 .true_label p{
 	margin: auto 0;

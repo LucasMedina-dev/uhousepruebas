@@ -44,3 +44,26 @@ if (isNaN(precioMinimo)){
 if (isNaN(precioMaximo)) {
     precioMaximo=9999999
 }
+let tipos=["casa", "departamento", "ph"]
+
+
+$(".true_label").click(function(){
+    if ($(this).hasClass("desactivado")){
+        $(this).removeClass("desactivado")
+        $(this).addClass("activado")
+    }else{
+        $(this).removeClass("activado")
+        $(this).addClass("desactivado")
+    }
+    
+})
+
+$(".true_label").click(function(){
+
+
+
+    console.log($(this).attr("for"))
+})
+
+guardarLS("tipos", tipos)
+
