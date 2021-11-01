@@ -49,7 +49,9 @@ if (idFav == null){
     idFav=[]
 }
 let tipos= JSON.parse(tomarLS("tipos"))
-
+if (tipos == null){
+    tipos=["casa","departamento","ph"]
+}
 //-------------------------------------------------------------------
 
 let domicilios=[] // variable declarada para recibir todas las casas departamentos y ph
