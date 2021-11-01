@@ -72,11 +72,11 @@ function estado(label, estado){
 }
 function comprobarResultado(){ 
     if (propiedades.innerHTML==""){
-        resultado.classList.add("activado")
-        resultado.classList.remove("desactivado")
+        resultado.classList.add("active")
+        resultado.classList.remove("disabled")
     }
     if (propiedades.innerHTML!=""){
-        resultado.classList.add("desactivado")
-        resultado.classList.remove("activado")
+        resultado.classList.add("active")
+        resultado.classList.remove("disabled")
     }
 }

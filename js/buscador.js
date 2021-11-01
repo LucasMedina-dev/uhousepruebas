@@ -59,4 +59,3 @@ $(".true_label").click(function(){
     }
     guardarLS("tipos", tipos)
 })
-
