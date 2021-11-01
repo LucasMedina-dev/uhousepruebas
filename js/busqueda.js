@@ -48,7 +48,7 @@ let idFav=JSON.parse(localStorage.getItem("idFav"))
 if (idFav == null){
     idFav=[]
 }
-let tipos= JSON.parse(tomarLS("tipos"))
+let tipos= JSON.parse(localStorage.getItem("tipos"))
 if (tipos == null){
     tipos=["casa","departamento","ph"]
 }
