@@ -20,8 +20,8 @@ enviarBusqueda.onclick = (e) =>{
     }else{
         if (tipos === null){
             tipos=["casa", "departamento", "ph"]
-            guardarLS("tipos", JSON.stringify(tipos))
         }
+        guardarLS("tipos", JSON.stringify(tipos))
         filtros.push(new buscadores(busquedaCiudad.value, busquedaMinimo.value, busquedaMaximo.value))
         const filtradores=JSON.stringify(filtros)
         guardarLS("filtros", filtradores)
@@ -40,7 +40,6 @@ $(".true_label").click(function(){
         $(this).addClass("desactivado")
         borrarItem(tipos, $(this).attr("for"))
     }
-    guardarLS("tipos", JSON.stringify(tipos))
 })
 
 
