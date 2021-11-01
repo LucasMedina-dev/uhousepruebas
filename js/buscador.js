@@ -1,3 +1,17 @@
+$(".true_label").click(function(){
+    if ($(this).hasClass("desactivado")){
+        $(this).removeClass("desactivado")
+        $(this).addClass("activado")
+        tipos.push($(this).attr("for"))
+    }else{
+        $(this).removeClass("activado")
+        $(this).addClass("desactivado")
+        borrarItem(tipos, $(this).attr("for"))
+    }
+    
+    guardarLS("tipos", JSON.stringify(tipos))
+})
+
 class buscadores{
     constructor(ciudad, precioMinimo, precioMaximo){
         this.ciudad=ciudad;
@@ -5,7 +19,6 @@ class buscadores{
         this.maximo=precioMaximo;
     }
 }
-
 const filtros =[]
 let moneda= $("#moneda")
 let busquedaCiudad = document.getElementById("busquedaCiudad")
@@ -16,7 +29,9 @@ let enviarBusqueda = document.getElementById("enviarBusqueda")
 enviarBusqueda.onclick = (e) =>{
     e.preventDefault()
     guardarLS("moneda", moneda.val())
-    if (busquedaCiudad.value==""){
+    if (tipos == null){
+        $(".tipos").addClass("advertir")
+    }if (busquedaCiudad.value==""){
         busquedaCiudad.classList.add("advertir")
     }else{
         filtros.push(new buscadores(busquedaCiudad.value, busquedaMinimo.value, busquedaMaximo.value))
@@ -25,7 +40,6 @@ enviarBusqueda.onclick = (e) =>{
         ejecutarBusqueda()
     }
 }
-
 const filtrados= JSON.parse(localStorage.getItem("filtros"))
 let ciudad= filtrados[0].ciudad.toLowerCase()
 let precioMinimo= parseInt(filtrados[0].minimo)
@@ -44,22 +58,6 @@ if (isNaN(precioMinimo)){
 if (isNaN(precioMaximo)) {
     precioMaximo=9999999
 }
-
-$(".true_label").click(function(){
-    if ($(this).hasClass("desactivado")){
-        $(this).removeClass("desactivado")
-        $(this).addClass("activado")
-        tipos.push($(this).attr("for"))
-    }else{
-        $(this).removeClass("activado")
-        $(this).addClass("desactivado")
-        borrarItem(tipos, $(this).attr("for"))
-    }
-    if (tipos == null){
-        $(".tipos").addClass("advertir")
-    }
-    guardarLS("tipos", JSON.stringify(tipos))
-})
 
 
 
