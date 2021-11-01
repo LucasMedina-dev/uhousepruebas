@@ -38,7 +38,8 @@ let idFav=JSON.parse(localStorage.getItem("idFav"))
 if (idFav == null){
     idFav=[]
 }
-
+let tipos=tomarLS("tipos")
+guardarLS("tipos", tipos)
 // variables declaradas para recibir todas las casas departamentos y ph
 let domicilios=[]
 
@@ -46,8 +47,7 @@ fetch("../js/db.json")
     .then((response) => response.json())
     .then(
     (data) => {
-        let tipo= ["casa", "departamento","ph"]
-        tipo.forEach(y=> domicilios= domicilios.concat(data.filter(x => x.tipo===y)))
+        tipos.forEach(y=> domicilios= domicilios.concat(data.filter(x => x.tipo===y)))
         let final= domicilios.filter(x => x.ciudad.toLowerCase()===ciudad && x.precio>precioMinimo && x.precio<precioMaximo)
 
         agregarViviendas(final)
@@ -90,8 +90,7 @@ fetch("../js/db.json")
 $(".header_boton").click(function(){
     $(".header_menu-size").toggle(200)
 })
-let tipos=tomarLS("tipos")
-guardarLS("tipos", tipos)
+
 // Buscador por Casa, Departamento o PH
 
 
