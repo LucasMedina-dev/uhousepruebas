@@ -1,9 +1,3 @@
-let tipos=JSON.parse(localStorage.getItem("tipos"))
-if (tipos === null){
-    tipos=["casa", "departamento", "ph"]
-    guardarLS("tipos", JSON.stringify(tipos))
-}
-
 class buscadores{
     constructor(ciudad, precioMinimo, precioMaximo){
         this.ciudad=ciudad;
@@ -24,6 +18,11 @@ enviarBusqueda.onclick = (e) =>{
     if (busquedaCiudad.value==""){
         busquedaCiudad.classList.add("advertir")
     }else{
+        let tipos=JSON.parse(localStorage.getItem("tipos"))
+        if (tipos === null){
+            tipos=["casa", "departamento", "ph"]
+            guardarLS("tipos", JSON.stringify(tipos))
+        }
         filtros.push(new buscadores(busquedaCiudad.value, busquedaMinimo.value, busquedaMaximo.value))
         const filtradores=JSON.stringify(filtros)
         guardarLS("filtros", filtradores)
