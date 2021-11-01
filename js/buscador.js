@@ -44,7 +44,7 @@ if (isNaN(precioMinimo)){
 if (isNaN(precioMaximo)) {
     precioMaximo=9999999
 }
-let tipos=["casa", "departamento", "ph"]
+let tipos=tomarLS("tipos")
 guardarLS("tipos", tipos)
 
 $(".true_label").click(function(){
