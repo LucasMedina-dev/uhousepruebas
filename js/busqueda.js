@@ -56,15 +56,26 @@ fetch("../js/db.json")
         tipos.forEach(y=> domicilios= domicilios.concat(data.filter(x => x.tipo===y)))
         let final= domicilios.filter(x => x.ciudad.toLowerCase()===ciudad && x.precio>precioMinimo && x.precio<precioMaximo)
         switch (localStorage.getItem("orden")){
-        case "precioMenor":
-            final.sort(function(a, b){
-                return a.precio - b.precio
-            });
-        break;
-        default:
-            console.log("no anduvo bro")
-        break;
-
+            case "precioMenor":
+                final.sort(function(a, b){
+                    return a.precio - b.precio
+                });
+            break;
+            case "precioMayor":
+                final.sort(function(a, b){
+                    return b.precio - a.precio
+                });
+            break;
+            case "ambientesMenor":
+                final.sort(function(a, b){
+                    return a.ambientes - b.ambientes
+                });
+            break;
+            case "ambientesMayor":
+                final.sort(function(a, b){
+                    return b.ambientes - a.ambientes
+                });
+            break;
         }
         agregarViviendas(final)
         comprobarResultado() 
