@@ -31,7 +31,7 @@ let idFav=JSON.parse(localStorage.getItem("idFav"))
 if (idFav == null){
     idFav=[]
 }
-let tipos=JSON.parse(localStorage.getItem("tipos"))
+
 
 //-------------------------------------------------------------------
 
