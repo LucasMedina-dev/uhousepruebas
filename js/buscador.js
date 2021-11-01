@@ -29,24 +29,7 @@ enviarBusqueda.onclick = (e) =>{
         ejecutarBusqueda()
     }
 }
-const filtrados= JSON.parse(localStorage.getItem("filtros"))
-let ciudad= filtrados[0].ciudad.toLowerCase()
-let precioMinimo= parseInt(filtrados[0].minimo)
-let precioMaximo= parseInt(filtrados[0].maximo)
-let monedaLS= localStorage.getItem("moneda")
-let dolarOficial = parseInt(localStorage.getItem("dolarOficial"))
-if (monedaLS==="peso"){
-    precioMinimo= precioMinimo / dolarOficial
-    console.log(precioMinimo)
-    precioMaximo=precioMaximo / dolarOficial
-    console.log(precioMaximo)
-}
-if (isNaN(precioMinimo)){
-    precioMinimo=0
-}
-if (isNaN(precioMaximo)) {
-    precioMaximo=9999999
-}
+
 
 $(".true_label").click(function(){
     if ($(this).hasClass("desactivado")){
