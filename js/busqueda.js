@@ -49,9 +49,8 @@ if (idFav == null){
     idFav=[]
 }
 let tipos= JSON.parse(localStorage.getItem("tipos"))
-if (tipos.length===0){
+if (tipos.length===0 || tipos=== null){
     tipos=["casa","departamento","ph"]
-    guardarLS("tipos", tipos)
 }
 //-------------------------------------------------------------------
 
