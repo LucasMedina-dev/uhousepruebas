@@ -59,6 +59,10 @@ fetch("../js/db.json")
         case "precioMenor":
             final.precio.sort(function(a, b){return a - b});
         break;
+        default:
+            console.log("no anduvo bro")
+        break;
+
         }
         agregarViviendas(final)
         comprobarResultado() 
