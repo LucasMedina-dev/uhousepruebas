@@ -47,10 +47,9 @@ let propiedades= document.getElementsByClassName("propiedades")[0]
 let idFav=JSON.parse(localStorage.getItem("idFav"))
 if (idFav == null){
     idFav=[]
-    console.log("no hay fav")
 }
 let tipos= JSON.parse(localStorage.getItem("tipos"))
-if (tipos.length=0){
+if (tipos.length===0){
     tipos=["casa","departamento","ph"]
 }
 //-------------------------------------------------------------------
