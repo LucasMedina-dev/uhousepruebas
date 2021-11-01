@@ -58,7 +58,7 @@ fetch("../js/db.json")
         switch (localStorage.getItem("orden")){
         case "precioMenor":
             final.sort(function(a, b){
-                return a.final.precio - b.final.precio
+                return a.precio - b.precio
             });
         break;
         default:
