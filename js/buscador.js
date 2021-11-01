@@ -55,5 +55,5 @@ $(".true_label").click(function(){
         $(this).addClass("desactivado")
         borrarItem(tipos, $(this).attr("for"))
     }
-    guardarLS("tipos", JSON.stringify(tipos))
+    guardarLS("tipos", tipos)
 })

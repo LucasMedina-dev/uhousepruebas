@@ -38,7 +38,7 @@ let idFav=JSON.parse(localStorage.getItem("idFav"))
 if (idFav == null){
     idFav=[]
 }
-let tipos=JSON.parse(localStorage.getItem("tipos"))
+let tipos=localStorage.getItem("tipos")
 // variables declaradas para recibir todas las casas departamentos y ph
 let domicilios=[]
 
