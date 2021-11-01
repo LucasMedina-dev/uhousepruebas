@@ -54,7 +54,7 @@ fetch("../js/db.json")
     .then(
     (data) => {
         tipos.forEach(y=> domicilios= domicilios.concat(data.filter(x => x.tipo===y)))
-        let final= domicilios.filter(x => x.ciudad.toLowerCase()===ciudad && x.precio>precioMinimo && x.precio<precioMaximo)
+        let final= domicilios.filter(x =>  x.precio>precioMinimo && x.precio<precioMaximo || x.ciudad.toLowerCase()===ciudad)
         switch (localStorage.getItem("orden")){
             case "precioMenor":
                 final.sort(function(a, b){
