@@ -72,11 +72,11 @@ function estado(label, estado){
 }
 function comprobarResultado(){ 
     if (propiedades.innerHTML==""){
-        resultado.classList.add("active")
-        resultado.classList.remove("disabled")
+        resultado.classList.add("displayNone")
+        resultado.classList.remove("displayBlock")
     }
     if (propiedades.innerHTML!=""){
-        resultado.classList.add("active")
-        resultado.classList.remove("disabled")
+        resultado.classList.add("displayBlock")
+        resultado.classList.remove("displayNone")
     }
 }
