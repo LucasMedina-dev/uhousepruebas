@@ -42,13 +42,24 @@ let tipos=JSON.parse(localStorage.getItem("tipos"))
 // variables declaradas para recibir todas las casas departamentos y ph
 let domicilios=[]
 
+let orden
+$("#orden").change(()=>{
+    orden=$("#orden").val()
+    guardarLS("orden", orden)
+    ejecutarBusqueda()
+})
+
 fetch("../js/db.json")
     .then((response) => response.json())
     .then(
     (data) => {
         tipos.forEach(y=> domicilios= domicilios.concat(data.filter(x => x.tipo===y)))
         let final= domicilios.filter(x => x.ciudad.toLowerCase()===ciudad && x.precio>precioMinimo && x.precio<precioMaximo)
-
+        switch (localStorage.getItem("orden")){
+        case "precioMenor":
+            final.precio.sort(function(a, b){return a - b});
+        break;
+        }
         agregarViviendas(final)
         comprobarResultado() 
     }) 
@@ -89,3 +100,4 @@ fetch("../js/db.json")
 $(".header_boton").click(function(){
     $(".header_menu-size").toggle(200)
 })
+
