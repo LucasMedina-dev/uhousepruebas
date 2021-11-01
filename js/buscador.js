@@ -1,6 +1,7 @@
 let tipos=JSON.parse(localStorage.getItem("tipos"))
 if (tipos === null){
     tipos=["casa", "departamento", "ph"]
+    guardarLS("tipos", JSON.stringify(tipos))
 }
 
 class buscadores{
