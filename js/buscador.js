@@ -16,10 +16,14 @@ let enviarBusqueda = document.getElementById("enviarBusqueda")
 enviarBusqueda.onclick = (e) =>{
     e.preventDefault()
     guardarLS("moneda", moneda.val())
-    filtros.push(new buscadores(busquedaCiudad.value, busquedaMinimo.value, busquedaMaximo.value))
+    if (busquedaCiudad.value==""){
+        busquedaCiudad.classList.add("advertir")
+    }else{
+        filtros.push(new buscadores(busquedaCiudad.value, busquedaMinimo.value, busquedaMaximo.value))
         const filtradores=JSON.stringify(filtros)
         guardarLS("filtros", filtradores)
         ejecutarBusqueda()
+    }
 }
 
 const filtrados= JSON.parse(localStorage.getItem("filtros"))
