@@ -238,7 +238,12 @@ input[type=number] { -moz-appearance:textfield; }
 .propiedades_informacion{
 	display: none;
 }
-
+.displayNone{
+	display: none;
+}
+.displayBlock{
+	display: block;
+}
 .desactivado{
 	opacity: 0.7;
 	transition: all .4s;
