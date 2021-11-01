@@ -241,9 +241,11 @@ input[type=number] { -moz-appearance:textfield; }
 
 .desactivado{
 	opacity: 0.7;
+	transition: all .4s;
 }
 .activado{
 	opacity: 1;
+	transition: all .4s;
 }
 .resultado{
 	color: white;
