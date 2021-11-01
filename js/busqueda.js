@@ -33,18 +33,6 @@ if (idFav == null){
 }
 let tipos=JSON.parse(localStorage.getItem("tipos"))
 //-------------------------------------------------------------------
-tipos.forEach(x=> {
-    switch (x){
-        case "casa":
-            ${"label[for='casa']"}.removeClass("activado")
-            ${"label[for='casa']"}.addClass("desactivado")
-        break;
-
-    }
-})
-
-
-
 
 let domicilios=[] // variable declarada para recibir todas las casas departamentos y ph
 
