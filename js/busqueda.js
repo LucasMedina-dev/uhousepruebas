@@ -57,7 +57,9 @@ fetch("../js/db.json")
         let final= domicilios.filter(x => x.ciudad.toLowerCase()===ciudad && x.precio>precioMinimo && x.precio<precioMaximo)
         switch (localStorage.getItem("orden")){
         case "precioMenor":
-            final.precio.sort(function(a, b){return a - b});
+            final.sort(function(a, b){
+                return a.final.precio - b.final.precio
+            });
         break;
         default:
             console.log("no anduvo bro")
