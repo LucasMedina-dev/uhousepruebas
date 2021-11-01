@@ -254,7 +254,6 @@ input[type=number] { -moz-appearance:textfield; }
 .advertir{
 	border: solid 1px red;
 }
-
 /* FILTROS DE CASAS DEPARTAMENTOS Y PH */
 .tipos{
 	display: flex;

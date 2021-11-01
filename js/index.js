@@ -31,9 +31,8 @@ $(".header_boton").click(function(){
 $("#boton").click(()=>{
     $(".false").toggle(300)
 })
-
+let tipos=["casa", ]
 $(".true_label").click(function(){
-    console.log($(this).attr("style"))
     if ($(this).attr("style")==="opacity: 0.65;"){
         $(this).animate({"opacity" : "1"})
     }else{
