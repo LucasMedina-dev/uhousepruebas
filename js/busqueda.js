@@ -122,6 +122,20 @@ fetch("../js/db.json")
             }
             guardarLS("idFav", JSON.stringify(idFav))
         })
+        $(".propiedades_favorito").each(function(){//Mantiene seleccionado los favoritos
+            let id= $(this).attr("id")
+            let n=id.match(/\d+/)[0]
+            console.log(id)
+            console.log(n)
+            if(idFav.find(x=> x===n)){
+                $(this).removeClass("propiedades_favorito-false")
+                $(this).addClass("propiedades_favorito-true")
+            }else{
+                        $(this).removeClass("propiedades_favorito-true")
+                $(this).addClass("propiedades_favorito-false")
+
+            }
+        })
     })
 
 
@@ -137,20 +151,6 @@ $(".true_label").each(function(){//Mantiene seleccionado los filtros por casa de
     }else{
         $(this).removeClass("activado")
         $(this).addClass("desactivado")
-
-    }
-})
-$(".propiedades_favorito").each(function(){//Mantiene seleccionado los favoritos
-    let id= $(this).attr("id")
-    let n=id.match(/\d+/)[0]
-    console.log(id)
-    console.log(n)
-    if(idFav.find(x=> x===n)){
-        $(this).removeClass("propiedades_favorito-false")
-        $(this).addClass("propiedades_favorito-true")
-    }else{
-                $(this).removeClass("propiedades_favorito-true")
-        $(this).addClass("propiedades_favorito-false")
 
     }
 })
