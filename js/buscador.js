@@ -43,5 +43,5 @@ $(".true_label").click(function(){
     }
     guardarLS("tipos", JSON.stringify(tipos))
 })
-$(function(){$(".true_label").trigger("click")})
+
 
