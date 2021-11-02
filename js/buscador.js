@@ -38,7 +38,14 @@ $(".true_label").click(function(){
     }
     guardarLS("tipos", JSON.stringify(tipos))
 })
-$(()=>{
-    $(".true-label").trigger("click")
-})
 
+
+$(".true_label").each(()=>{
+    if($(this).hasClass("activado")){
+        $(this).removeClass("activado")
+        $(this).addClass("desactivado")
+    }else{
+        $(this).removeClass("desactivado")
+        $(this).addClass("activado")
+    }
+})
