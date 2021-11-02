@@ -129,3 +129,15 @@ $(".header_boton").click(function(){
     $(".header_menu-size").toggle(200)
 })
 
+$(".true_label").each(function(){//Mantiene seleccionado los filtros por casa departamento y ph
+    let label=$(this).attr("for")
+    console.log(label)
+    if(tipos.find(x=> x===label)){
+        $(this).removeClass("desactivado")
+        $(this).addClass("activado")
+    }else{
+                $(this).removeClass("activado")
+        $(this).addClass("desactivado")
+
+    }
+})
