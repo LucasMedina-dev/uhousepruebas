@@ -131,13 +131,24 @@ $(".header_boton").click(function(){
 
 $(".true_label").each(function(){//Mantiene seleccionado los filtros por casa departamento y ph
     let label=$(this).attr("for")
-    console.log(label)
     if(tipos.find(x=> x===label)){
         $(this).removeClass("desactivado")
         $(this).addClass("activado")
     }else{
                 $(this).removeClass("activado")
         $(this).addClass("desactivado")
+
+    }
+})
+$(".propiedades_favorito").each(function(){//Mantiene seleccionado los favoritos
+    let id= $(this).attr("id")
+    let n=id.match(/\d+/)[0]
+    if(idFav.find(x=> x===n)){
+        $(this).removeClass("propiedades_favorito-false")
+        $(this).addClass("propiedades_favorito-true")
+    }else{
+                $(this).removeClass("propiedades_favorito-true")
+        $(this).addClass("propiedades_favorito-false")
 
     }
 })
