@@ -27,21 +27,18 @@ enviarBusqueda.onclick = (e) =>{
 
 $(".true_label").click(function(){
     let label=$(this).attr("for")
-    if ($(this).hasClass("desactivado")){
-        $(this).removeClass("desactivado")
-        $(this).addClass("activado")
-        
-    }else{
-        $(this).removeClass("activado")
-        $(this).addClass("desactivado")
-        
-    }
     if(tipos.find(x=> x===label)){
         borrarItem(tipos, $(this).attr("for"))
+        $(this).removeClass("activado")
+        $(this).addClass("desactivado")
     }else{
         tipos.push($(this).attr("for"))
+        $(this).removeClass("desactivado")
+        $(this).addClass("activado")
     }
     guardarLS("tipos", JSON.stringify(tipos))
 })
-
+$(()=>{
+    $(".true-label").trigger()
+})
 
