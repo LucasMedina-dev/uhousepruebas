@@ -95,7 +95,7 @@ fetch("../js/db.json")
         $('.propiedades_label').click(function(){
             if ($(this).children(".favorito").prop("checked")==true){
                 $(this).children(".propiedades_favorito").children("i").animate({fontSize:"1.5rem"}, 50)
-                                                                       .animate({fontSize:"1.2rem"}, 50)
+                                                                       .animate({fontSize:"1rem"}, 50)
                 $(this).children(".propiedades_favorito").addClass("propiedades_favorito-true")
                 $(this).children(".propiedades_favorito").removeClass("propiedades_favorito-false")
 
