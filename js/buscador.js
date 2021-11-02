@@ -43,7 +43,7 @@ $(".true_label").click(function(){
 })
 
 
-$(".true_label").each(()=>{
+$(".true_label").each(function(){
     let label=$(this).attr("for")
     console.log(label)
     if(tipos.find(x=> x===label)){
