@@ -135,7 +135,7 @@ $(".true_label").each(function(){//Mantiene seleccionado los filtros por casa de
         $(this).removeClass("desactivado")
         $(this).addClass("activado")
     }else{
-                $(this).removeClass("activado")
+        $(this).removeClass("activado")
         $(this).addClass("desactivado")
 
     }

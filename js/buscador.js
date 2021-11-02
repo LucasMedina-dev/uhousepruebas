@@ -41,17 +41,3 @@ $(".true_label").click(function(){
     }
     guardarLS("tipos", JSON.stringify(tipos))
 })
-
-
-$(".true_label").each(function(){
-    let label=$(this).attr("for")
-    console.log(label)
-    if(tipos.find(x=> x===label)){
-        $(this).removeClass("desactivado")
-        $(this).addClass("activado")
-    }else{
-                $(this).removeClass("activado")
-        $(this).addClass("desactivado")
-
-    }
-})
