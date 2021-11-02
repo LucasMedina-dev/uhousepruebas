@@ -23,7 +23,10 @@ enviarBusqueda.onclick = (e) =>{
         ejecutarBusqueda()
     }
 }
-
+let tipos= JSON.parse(localStorage.getItem("tipos"))
+if (tipos.length===0 || tipos=== null){
+    tipos=["casa","departamento","ph"]
+}
 
 $(".true_label").click(function(){
     let label=$(this).attr("for")
