@@ -39,6 +39,6 @@ $(".true_label").click(function(){
     guardarLS("tipos", JSON.stringify(tipos))
 })
 $(()=>{
-    $(".true-label").trigger()
+    $(".true-label").trigger("click")
 })
 
