@@ -41,7 +41,8 @@ $(".true_label").click(function(){
 
 
 $(".true_label").each(()=>{
-    if($(this).hasClass("activado")){
+    let label=$(this).attr("for")
+    if(tipos.find(x=> x===label)){
         $(this).removeClass("activado")
         $(this).addClass("desactivado")
     }else{
