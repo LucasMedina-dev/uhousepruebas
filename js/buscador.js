@@ -30,7 +30,7 @@ $(".true_label").click(function(){
         $(this).removeClass("desactivado")
         $(this).addClass("activado")
         tipos.push($(this).attr("for"))
-        console.log($(this).attr("for"))
+        console.log($(this).attr("class"))
     }else{
         $(this).removeClass("activado")
         $(this).addClass("desactivado")
