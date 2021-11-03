@@ -139,6 +139,7 @@ fetch("../js/db.json")
         let indiceFinal=data.lenght
         console.log(indiceFinal)
         console.log(indiceInicial)
+        $("#index").text(´´${indiceInicial} "de" ${indiceFinal}´)
     })
 
 
