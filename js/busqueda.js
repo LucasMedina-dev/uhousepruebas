@@ -94,7 +94,7 @@ fetch("../js/db.json")
     .then(()=>{
         $('.propiedades_favorito').click(function(){
             console.log("click")
-            if ($(this).hasClass("propiedades_favorito-true")){
+            if ($(this).hasClass("propiedades_favorito-false")){
                 console.log("true")
                 $(this).children("i").animate({fontSize:"1.5rem"}, 100)
                                     .animate({fontSize:"1rem"}, 100)
@@ -102,7 +102,7 @@ fetch("../js/db.json")
                 $(this).removeClass("propiedades_favorito-false")
 
             }
-            if ($(this).hasClass("propiedades_favorito-false")){
+            if ($(this).hasClass("propiedades_favorito-true")){
                 console.log($(this)[0])
 
                 $(this).removeClass("propiedades_favorito-true")
