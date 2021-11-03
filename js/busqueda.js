@@ -134,9 +134,9 @@ fetch("../js/db.json")
             }
         })
     })
-    .then((data)=>{
+    .then(()=>{
         let indiceInicial=localStorage.getItem("indiceInicial")
-        let indiceFinal=data.lenght/10
+        let indiceFinal=final.lenght/10
         console.log(indiceFinal)
         console.log(indiceInicial)
         $("#index").text(`${indiceInicial} de ${indiceFinal}`)
