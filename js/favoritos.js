@@ -23,7 +23,7 @@ fetch("../js/db.json")
         
     }) 
     .then(()=>{ 
-        $('.propiedades_label').click(function(){ //Efecto al apretar boton de favorito
+        $('.propiedades_favorito').click(function(){ //Efecto al apretar boton de favorito
             if ($(this).hasClass("propiedades_favorito-false")){
                 $(this).removeClass("propiedades_favorito-false")
                 $(this).addClass("propiedades_favorito-true")
