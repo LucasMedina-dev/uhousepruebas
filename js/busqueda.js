@@ -95,18 +95,16 @@ fetch("../js/db.json")
         $('.propiedades_favorito').click(function(){
             console.log("click")
             if ($(this).hasClass("propiedades_favorito-false")){
-                console.log("true")
-                $(this).children("i").animate({fontSize:"1.5rem"}, 100)
+                $(this)[0].removeClass("propiedades_favorito-false")
+                $(this)[0].addClass("propiedades_favorito-true")
+                $(this)[0].children("i").animate({fontSize:"1.5rem"}, 100)
                                     .animate({fontSize:"1rem"}, 100)
-                $(this).addClass("propiedades_favorito-true")
-                $(this).removeClass("propiedades_favorito-false")
-
             }
             if ($(this).hasClass("propiedades_favorito-true")){
                 console.log($(this)[0])
 
-                $(this).removeClass("propiedades_favorito-true")
-                $(this).addClass("propiedades_favorito-false")
+                $(this)[0].removeClass("propiedades_favorito-true")
+                $(this)[0].addClass("propiedades_favorito-false")
             }
         })
         $(".propiedades_toggle").click(function(){ 
