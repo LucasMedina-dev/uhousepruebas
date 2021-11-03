@@ -93,7 +93,9 @@ fetch("../js/db.json")
     }) 
     .then(()=>{
         $('.propiedades_label').click(function(){
+            console.log("click")
             if ($(this).children(".propiedades_favorito").hasClass(".propiedades_favorito-true")){
+                console.log("true")
                 $(this).children(".propiedades_favorito").children("i").animate({fontSize:"1.5rem"}, 100)
                                                                        .animate({fontSize:"1rem"}, 100)
                 $(this).children(".propiedades_favorito").addClass("propiedades_favorito-true")
@@ -101,6 +103,7 @@ fetch("../js/db.json")
 
             }
             if ($(this).children(".propiedades_favorito").hasClass(".propiedades_favorito-false")){
+                console.log("false")
                 $(this).children(".propiedades_favorito").children("i").animate({fontSize:"1rem"}, 100)
                 $(this).children(".propiedades_favorito").removeClass("propiedades_favorito-true")
                 $(this).children(".propiedades_favorito").addClass("propiedades_favorito-false")
@@ -125,8 +128,6 @@ fetch("../js/db.json")
         $(".propiedades_favorito").each(function(){//Mantiene seleccionado los favoritos
             let id= $(this).attr("id")
             let n=id.match(/\d+/)[0]
-            console.log(id)
-            console.log(n)
             if(idFav.find(x=> x===n)){
                 $(this).removeClass("propiedades_favorito-false")
                 $(this).addClass("propiedades_favorito-true")
