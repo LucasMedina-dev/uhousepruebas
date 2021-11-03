@@ -24,17 +24,16 @@ fetch("../js/db.json")
     }) 
     .then(()=>{ 
         $('.propiedades_label').click(function(){ //Efecto al apretar boton de favorito
-            if ($(this).children(".favorito").prop("checked")==true){
-                $(this).children(".propiedades_favorito").children("i").animate({fontSize:"1.5rem"}, 50)
-                                                                       .animate({fontSize:"1.2rem"}, 50)
-                $(this).children(".propiedades_favorito").addClass("propiedades_favorito-true")
-                $(this).children(".propiedades_favorito").removeClass("propiedades_favorito-false")
-
-            }
-            if ($(this).children(".favorito").prop("checked")==false){
-                $(this).children(".propiedades_favorito").children("i").animate({fontSize:"1rem"}, 50)
-                $(this).children(".propiedades_favorito").removeClass("propiedades_favorito-true")
-                $(this).children(".propiedades_favorito").addClass("propiedades_favorito-false")
+            if ($(this).hasClass("propiedades_favorito-false")){
+                $(this).removeClass("propiedades_favorito-false")
+                $(this).addClass("propiedades_favorito-true")
+                $(this).children("i").animate({fontSize:"1.5rem"}, 100)
+                                    .animate({fontSize:"1rem"}, 100)
+            }else{
+                $(this).children("i").animate({fontSize:"1.5rem"}, 100)
+                                    .animate({fontSize:"1rem"}, 100)
+                $(this).removeClass("propiedades_favorito-true")
+                $(this).addClass("propiedades_favorito-false")
             }
         })
         $(".propiedades_toggle").click(function(){ // Efecto al hacer click en informacion de la vivienda

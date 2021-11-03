@@ -94,13 +94,11 @@ fetch("../js/db.json")
     .then(()=>{
         $('.propiedades_favorito').click(function(){
             if ($(this).hasClass("propiedades_favorito-false")){
-                console.log("false")
                 $(this).removeClass("propiedades_favorito-false")
                 $(this).addClass("propiedades_favorito-true")
                 $(this).children("i").animate({fontSize:"1.5rem"}, 100)
                                     .animate({fontSize:"1rem"}, 100)
             }else{
-                console.log("true")
                 $(this).children("i").animate({fontSize:"1.5rem"}, 100)
                                     .animate({fontSize:"1rem"}, 100)
                 $(this).removeClass("propiedades_favorito-true")
