@@ -102,6 +102,8 @@ fetch("../js/db.json")
             }
             if ($(this).hasClass("propiedades_favorito-true")){
                 console.log("true")
+                $(this).children("i").animate({fontSize:"1.5rem"}, 100)
+                                    .animate({fontSize:"1rem"}, 100)
                 $(this).removeClass("propiedades_favorito-true")
                 $(this).addClass("propiedades_favorito-false")
             }
