@@ -93,14 +93,14 @@ fetch("../js/db.json")
     }) 
     .then(()=>{
         $('.propiedades_label').click(function(){
-            if ($(this).children(".favorito").prop("checked")==true){
+            if ($(this).children(".propiedades_favorito").hasClass(".propiedades_favorito-true")){
                 $(this).children(".propiedades_favorito").children("i").animate({fontSize:"1.5rem"}, 100)
                                                                        .animate({fontSize:"1rem"}, 100)
                 $(this).children(".propiedades_favorito").addClass("propiedades_favorito-true")
                 $(this).children(".propiedades_favorito").removeClass("propiedades_favorito-false")
 
             }
-            if ($(this).children(".favorito").prop("checked")==false){
+            if ($(this).children(".propiedades_favorito").hasClass(".propiedades_favorito-false")){
                 $(this).children(".propiedades_favorito").children("i").animate({fontSize:"1rem"}, 100)
                 $(this).children(".propiedades_favorito").removeClass("propiedades_favorito-true")
                 $(this).children(".propiedades_favorito").addClass("propiedades_favorito-false")
