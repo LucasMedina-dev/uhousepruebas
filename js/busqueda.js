@@ -65,7 +65,10 @@ fetch("../js/db.json")
     .then(
     (data) => {
         tipos.forEach(y=> domicilios= domicilios.concat(data.filter(x => x.tipo===y)))
+        // "tipos" son los tipos de propiedades(casa,dpto,ph), se filtran las propiedades que coincidan con la busqueda
         let final= domicilios.filter(x => x.ciudad.toLowerCase()===ciudad && x.precio>precioMinimo && x.precio<precioMaximo)
+        // "final" toma los datos filtrados del array anterior y se toman las que coincidan con el precio y ciudad
+        guardarLS("indiceFinal", final.lenght)
         switch (localStorage.getItem("orden")){
             case "precioMenor":
                 final.sort(function(a, b){
@@ -136,7 +139,7 @@ fetch("../js/db.json")
     })
     .then(()=>{
         let indiceInicial=localStorage.getItem("indiceInicial")
-        let indiceFinal=final.lenght/10
+        let indiceFinal=localStorage.getItem("indiceFinal")/10
         console.log(indiceFinal)
         console.log(indiceInicial)
         $("#index").text(`${indiceInicial} de ${indiceFinal}`)
