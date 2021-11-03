@@ -59,7 +59,7 @@ $("#orden").change(()=>{
     guardarLS("orden", orden)
     ejecutarBusqueda()
 })
-
+let parasaber
 fetch("../js/db.json")
     .then((response) => response.json())
     .then(
@@ -68,6 +68,7 @@ fetch("../js/db.json")
         // "tipos" son los tipos de propiedades(casa,dpto,ph), se filtran las propiedades que coincidan con la busqueda
         let final= domicilios.filter(x => x.ciudad.toLowerCase()===ciudad && x.precio>precioMinimo && x.precio<precioMaximo)
         // "final" toma los datos filtrados del array anterior y se toman las que coincidan con el precio y ciudad
+        parasaber=final
         guardarLS("indiceFinal", final.lenght)
         switch (localStorage.getItem("orden")){
             case "precioMenor":
