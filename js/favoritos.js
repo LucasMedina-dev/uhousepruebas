@@ -69,6 +69,18 @@ fetch("../js/db.json")
     })
 
 
+
+
+
+
+
+
+
+
+
+
+
+
 //Favoritos
 
 /*
