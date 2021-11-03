@@ -103,7 +103,8 @@ fetch("../js/db.json")
 
             }
             if ($(this).hasClass("propiedades_favorito-false")){
-                console.log("false")
+                console.log($(this))
+
                 $(this).removeClass("propiedades_favorito-true")
                 $(this).addClass("propiedades_favorito-false")
             }
