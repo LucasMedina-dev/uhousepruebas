@@ -92,21 +92,20 @@ fetch("../js/db.json")
         comprobarResultado() 
     }) 
     .then(()=>{
-        $('.propiedades_label').click(function(){
+        $('.propiedades_favorito').click(function(){
             console.log("click")
-            if ($(this).children(".propiedades_favorito").hasClass("propiedades_favorito-true")){
+            if ($(this).hasClass("propiedades_favorito-true")){
                 console.log("true")
-                $(this).children(".propiedades_favorito").children("i").animate({fontSize:"1.5rem"}, 100)
-                                                                       .animate({fontSize:"1rem"}, 100)
-                $(this).children(".propiedades_favorito").addClass("propiedades_favorito-true")
-                $(this).children(".propiedades_favorito").removeClass("propiedades_favorito-false")
+                $(this).children("i").animate({fontSize:"1.5rem"}, 100)
+                                    .animate({fontSize:"1rem"}, 100)
+                $(this).addClass("propiedades_favorito-true")
+                $(this).removeClass("propiedades_favorito-false")
 
             }
-            if ($(this).children(".propiedades_favorito").hasClass("propiedades_favorito-false")){
+            if ($(this).hasClass("propiedades_favorito-false")){
                 console.log("false")
-                $(this).children(".propiedades_favorito").children("i").animate({fontSize:"1rem"}, 10000)
-                $(this).children(".propiedades_favorito").removeClass("propiedades_favorito-true")
-                $(this).children(".propiedades_favorito").addClass("propiedades_favorito-false")
+                $(this).removeClass("propiedades_favorito-true")
+                $(this).addClass("propiedades_favorito-false")
             }
         })
         $(".propiedades_toggle").click(function(){ 
