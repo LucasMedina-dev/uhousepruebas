@@ -104,7 +104,7 @@ fetch("../js/db.json")
             }
             if ($(this).children(".propiedades_favorito").hasClass("propiedades_favorito-false")){
                 console.log("false")
-                $(this).children(".propiedades_favorito").children("i").animate({fontSize:"1rem"}, 100)
+                $(this).children(".propiedades_favorito").children("i").animate({fontSize:"1rem"}, 10000)
                 $(this).children(".propiedades_favorito").removeClass("propiedades_favorito-true")
                 $(this).children(".propiedades_favorito").addClass("propiedades_favorito-false")
             }
