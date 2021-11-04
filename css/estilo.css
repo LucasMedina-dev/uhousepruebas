@@ -290,7 +290,6 @@ input[type=number] { -moz-appearance:textfield; }
 	margin-left: 25px;
 }
 .control{
-	margin: auto;
+	margin: 15px auto;
 	background-color: white;
-	margin-top: 30px;
 }
