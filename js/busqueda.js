@@ -136,13 +136,6 @@ fetch("../js/db.json")
             }
         })
     })
-    .then(()=>{
-        let indiceInicial=localStorage.getItem("indiceInicial")
-        let indiceFinal=Math.ceil(localStorage.getItem("indiceFinal")/10)
-        console.log(indiceFinal)
-        console.log(indiceInicial)
-        $("#index").text(`${indiceInicial} de ${indiceFinal}`)
-    })
 
 
 $(".header_boton").click(function(){
@@ -159,4 +152,13 @@ $(".true_label").each(function(){//Mantiene seleccionado los filtros por casa de
         $(this).addClass("desactivado")
 
     }
+})
+let indiceInicial=localStorage.getItem("indiceInicial")
+let indiceFinal=Math.ceil(localStorage.getItem("indiceFinal")/10)
+$("#index").text(`${indiceInicial} de ${indiceFinal}`)
+
+$("#siguiente").click(()=>{
+    indiceInicial++
+    guardarLS("indiceInicial", indiceInicial)
+
 })
