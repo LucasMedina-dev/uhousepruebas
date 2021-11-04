@@ -293,6 +293,12 @@ input[type=number] { -moz-appearance:textfield; }
 	margin: 15px auto;
 	background-color: white;
 }
+.control_boton{
+	width: 100px;
+	height: 50px;
+	border: none;
+	background-color: rgba(190,190,190,0.7);
+}
 #index{
 	padding: 10px;
 }
