@@ -289,6 +289,11 @@ input[type=number] { -moz-appearance:textfield; }
 	grid-area: orden;
 	margin-left: 25px;
 }
+#orden{
+	width: 100px;
+	height: 50px;
+	
+}
 .control{
 	margin: 15px auto;
 	background-color: rgba(150,150,150,0.5);
@@ -297,7 +302,7 @@ input[type=number] { -moz-appearance:textfield; }
 	width: 100px;
 	height: 50px;
 	border: none;
-	background-color: rgba(190,190,190,0.7);
+	background-color: rgba(190,190,190,0.4);
 }
 #index{
 	padding: 10px;
