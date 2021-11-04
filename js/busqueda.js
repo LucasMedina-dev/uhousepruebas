@@ -152,6 +152,14 @@ fetch("../js/db.json")
             }
         })
     })
+    .then(()=>{
+        if (indiceFinal===1){
+            $("#siguiente").hide()
+        }
+        if(indiceInicial===1){
+            $("#previo").hide()
+        }
+    })
 
 
 $(".header_boton").click(function(){
@@ -185,9 +193,3 @@ $("#previo").click(()=>{
     }
     
 })
-if (indiceFinal===1){
-    $("#siguiente").hide()
-}
-if(indiceInicial===1){
-    $("#previo").hide()
-}
