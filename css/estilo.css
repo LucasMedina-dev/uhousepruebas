@@ -291,7 +291,7 @@ input[type=number] { -moz-appearance:textfield; }
 }
 .control{
 	margin: 15px auto;
-	background-color: white;
+	background-color: rgba(150,150,150,0.5);
 }
 .control_boton{
 	width: 100px;
