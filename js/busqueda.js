@@ -163,3 +163,10 @@ $("#siguiente").click(()=>{
     }
     
 })
+$("#previo").click(()=>{
+    if (indiceInicial <= indiceFinal && indiceInicial>1){
+        guardarLS("indiceInicial", indiceInicial-1)
+        ejecutarBusqueda()
+    }
+    
+})
