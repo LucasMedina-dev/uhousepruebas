@@ -289,3 +289,6 @@ input[type=number] { -moz-appearance:textfield; }
 	grid-area: orden;
 	margin-left: 25px;
 }
+.control{
+	margin: auto;
+}
