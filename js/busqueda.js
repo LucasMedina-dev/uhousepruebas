@@ -38,7 +38,6 @@ if (isNaN(precioMaximo)) {
 }
 function ejecutarBusqueda() {
     window.open("busquedas.html", "_self");
-    guardarLS("indiceInicial", 1)
 }
 let resultado = document.getElementById("resultado") // elemento creado para ejecutar funcion comprobarBusqueda() que se ejecuta si no hay resultados
 let propiedades= document.getElementsByClassName("propiedades")[0]
@@ -160,5 +159,5 @@ $("#index").text(`${indiceInicial} de ${indiceFinal}`)
 $("#siguiente").click(()=>{
     indiceInicial++
     guardarLS("indiceInicial", indiceInicial)
-
+    ejecutarBusqueda()
 })
