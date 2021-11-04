@@ -154,7 +154,7 @@ $(".true_label").each(function(){//Mantiene seleccionado los filtros por casa de
 })
 let indiceInicial=parseInt(localStorage.getItem("indiceInicial"))
 let indiceFinal=Math.ceil(parseInt(localStorage.getItem("indiceLength"))/10)
-$("#index").text(`${indiceInicial++} de ${indiceFinal}`)
+$("#index").text(`${indiceInicial+1} de ${indiceFinal}`)
 
 $("#siguiente").click(()=>{
     if (indiceInicial < indiceFinal){
