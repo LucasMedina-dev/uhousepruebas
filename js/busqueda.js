@@ -186,8 +186,8 @@ $("#previo").click(()=>{
     
 })
 if (indiceFinal===1){
-    $("#siguiente").hidden()
+    $("#siguiente").hide()
 }
 if(indiceInicial===1){
-    $("#previo").hidden()
+    $("#previo").hide()
 }
