@@ -152,7 +152,7 @@ $(".true_label").each(function(){//Mantiene seleccionado los filtros por casa de
 
     }
 })
-let indiceInicial=localStorage.getItem("indiceInicial")
+let indiceInicial=parseInt(localStorage.getItem("indiceInicial"))
 let indiceFinal=Math.ceil(localStorage.getItem("indiceLength")/10)
 $("#index").text(`${indiceInicial++} de ${indiceFinal}`)
 
