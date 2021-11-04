@@ -45,8 +45,8 @@ function agregarViviendas(ingreso){
 function guardarLS(clave, valor){
     localStorage.setItem(clave, valor)
 }
-function tomarLS(clave){
-    localStorage.getItem(clave)
+function guardarSS(clave){
+    sessionStorage.getItem(clave)
 }
 function borrarItem ( array, item ) { // Con esta funcion elijo que borrar de que array
     var i = array.indexOf( item );

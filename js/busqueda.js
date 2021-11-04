@@ -68,7 +68,7 @@ fetch("../js/db.json")
         // "tipos" son los tipos de propiedades(casa,dpto,ph), se filtran las propiedades que coincidan con la busqueda
         let final= domicilios.filter(x => x.ciudad.toLowerCase()===ciudad && x.precio>precioMinimo && x.precio<precioMaximo)
         // "final" toma los datos filtrados del array anterior y se toman las que coincidan con el precio y ciudad
-        guardarLS("indiceLength", final.length)
+        guardarSS("indiceLength", final.length)
         indiceInicial=parseInt(localStorage.getItem("indiceInicial"))
         indiceFinal=Math.ceil(parseInt(localStorage.getItem("indiceLength"))/10)
         $("#index").text(`${indiceInicial} de ${indiceFinal}`)
@@ -164,14 +164,14 @@ $(".true_label").each(function(){//Mantiene seleccionado los filtros por casa de
 })
 $("#siguiente").click(()=>{
     if (indiceInicial < indiceFinal){
-        guardarLS("indiceInicial", indiceInicial+1)
+        guardarSS("indiceInicial", indiceInicial+1)
         ejecutarBusqueda()
     }
     
 })
 $("#previo").click(()=>{
     if (indiceInicial <= indiceFinal && indiceInicial>1){
-        guardarLS("indiceInicial", indiceInicial-1)
+        guardarSS("indiceInicial", indiceInicial-1)
         ejecutarBusqueda()
     }
     
