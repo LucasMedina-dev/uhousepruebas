@@ -293,3 +293,6 @@ input[type=number] { -moz-appearance:textfield; }
 	margin: 15px auto;
 	background-color: white;
 }
+#index{
+	padding: 10px;
+}
