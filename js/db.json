@@ -80,6 +80,46 @@
     "baños": 1
   },
   {
+    "id": 8,
+    "condicion": "Venta",
+    "ciudad": "Mar del Plata",
+    "tipo": "departamento",
+    "precio": 90000,
+    "ambientes": 5,
+    "pisos": 1,
+    "baños": 2
+  },
+  {
+    "id": 9,
+    "condicion": "Venta",
+    "ciudad": "Mar del Plata",
+    "tipo": "departamento",
+    "precio": 65000,
+    "ambientes": 4,
+    "pisos": 1,
+    "baños": 2
+  },
+  {
+    "id": 10,
+    "condicion": "Venta",
+    "ciudad": "Mar del Plata",
+    "tipo": "departamento",
+    "precio": 50000,
+    "ambientes": 4,
+    "pisos": 1,
+    "baños": 1
+  },
+  {
+    "id": 11,
+    "condicion": "Venta",
+    "ciudad": "Mar del Plata",
+    "tipo": "departamento",
+    "precio": 25000,
+    "ambientes": 1,
+    "pisos": 1,
+    "baños": 1
+  },
+  {
     "id": 12,
     "condicion": "Venta",
     "ciudad": "Mar del Plata",
@@ -120,42 +160,102 @@
     "baños": 1
   },
   {
-    "id": 8,
+    "id": 16,
     "condicion": "Venta",
     "ciudad": "Mar del Plata",
     "tipo": "departamento",
-    "precio": 90000,
-    "ambientes": 5,
-    "pisos": 1,
-    "baños": 2
-  },
-  {
-    "id": 9,
-    "condicion": "Venta",
-    "ciudad": "Mar del Plata",
-    "tipo": "departamento",
-    "precio": 65000,
-    "ambientes": 4,
-    "pisos": 1,
-    "baños": 2
-  },
-  {
-    "id": 10,
-    "condicion": "Venta",
-    "ciudad": "Mar del Plata",
-    "tipo": "departamento",
-    "precio": 50000,
-    "ambientes": 4,
+    "precio": 30000,
+    "ambientes": 1,
     "pisos": 1,
     "baños": 1
   },
   {
-    "id": 11,
+    "id": 17,
+    "condicion": "Venta",
+    "ciudad": "Mar del Plata",
+    "tipo": "casa",
+    "precio": 30000,
+    "ambientes": 2,
+    "pisos": 1,
+    "baños": 1
+  },
+  {
+    "id": 18,
     "condicion": "Venta",
     "ciudad": "Mar del Plata",
     "tipo": "departamento",
-    "precio": 25000,
+    "precio": 40000,
+    "ambientes": 4,
+    "pisos": 2,
+    "baños": 1
+  },
+  {
+    "id": 19,
+    "condicion": "Venta",
+    "ciudad": "Mar del Plata",
+    "tipo": "departamento",
+    "precio": 110000,
+    "ambientes": 5,
+    "pisos": 2,
+    "baños": 2
+  },
+  {
+    "id": 20,
+    "condicion": "Venta",
+    "ciudad": "Batan",
+    "tipo": "casa",
+    "precio": 30000,
     "ambientes": 1,
+    "pisos": 1,
+    "baños": 1
+  },
+  {
+    "id": 21,
+    "condicion": "Venta",
+    "ciudad": "Batan",
+    "tipo": "departamento",
+    "precio": 15000,
+    "ambientes": 1,
+    "pisos": 1,
+    "baños": 1
+  },
+  {
+    "id": 22,
+    "condicion": "Venta",
+    "ciudad": "Batan",
+    "tipo": "casa",
+    "precio": 20000,
+    "ambientes": 2,
+    "pisos": 1,
+    "baños": 1
+  },
+  {
+    "id": 23,
+    "condicion": "Venta",
+    "ciudad": "Batan",
+    "tipo": "ph",
+    "precio": 25000,
+    "ambientes": 2,
+    "pisos": 1,
+    "baños": 1
+  },
+  {
+    "id": 24,
+    "condicion": "Venta",
+    "ciudad": "Batan",
+    "tipo": "ph",
+    "precio": 20000,
+    "ambientes": 2,
+    "pisos": 1,
+    "baños": 1
+  },
+  {
+    "id": 25,
+    "condicion": "Venta",
+    "ciudad": "Batan",
+    "tipo": "ph",
+    "precio": 30000,
+    "ambientes": 3,
     "pisos": 1,
     "baños": 1
   }
