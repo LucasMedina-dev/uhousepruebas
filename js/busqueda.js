@@ -158,7 +158,7 @@ $("#index").text(`${indiceInicial} de ${indiceFinal}`)
 
 $("#siguiente").click(()=>{
     if (indiceInicial < indiceFinal){
-        guardarLS("indiceInicial", indiceInicial++)
+        guardarLS("indiceInicial", indiceInicial+1)
         ejecutarBusqueda()
     }
     
