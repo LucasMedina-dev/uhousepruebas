@@ -26,20 +26,22 @@ let monedaLS= localStorage.getItem("moneda")
 let dolarOficial = parseInt(localStorage.getItem("dolarOficial"))
 if (monedaLS==="peso"){
     precioMinimo= precioMinimo / dolarOficial
-    console.log(precioMinimo)
     precioMaximo=precioMaximo / dolarOficial
-    console.log(precioMaximo)
 }
+
+// Condiciones en caso de dejar la busqueda por precio en blanco
 if (isNaN(precioMinimo)){
     precioMinimo=0
 }
 if (isNaN(precioMaximo)) {
     precioMaximo=9999999
 }
+//---------------------------------------------------------------
+
 function ejecutarBusqueda() {
     window.open("busquedas.html", "_self");
 }
-let resultado = document.getElementById("resultado") // elemento creado para ejecutar funcion comprobarBusqueda() que se ejecuta si no hay resultados
+let resultado = document.getElementById("resultado") // llamado a elemento creado para ejecutar funcion comprobarBusqueda() que se ejecuta si no hay resultados
 let propiedades= document.getElementsByClassName("propiedades")[0]
 
 // Aca se guardan los favoritos y los tipos de vivienda que se buscan
@@ -52,12 +54,17 @@ if (idFav == null){
 
 let domicilios=[] // variable declarada para recibir todas las casas departamentos y ph
 
+
+// ORDEN DE LOS ITEMS- ORDEN DE LOS ITEMS- ORDEN DE LOS ITEMS
 let orden
 $("#orden").change(()=>{
-    orden=$("#orden").val()
-    guardarLS("orden", orden)
+    orden=$("#orden").val()// tomo el valor del orden requerido para organizar los items
+    guardarLS("orden", orden) // lo guardo en localStorage para luego ejecutar la busqueda y reaparecer los items ordenados
     ejecutarBusqueda()
 })
+//------------------------------------------------------------
+
+
 let indiceInicial
 let indiceFinal
 fetch("../js/db.json")
@@ -68,7 +75,7 @@ fetch("../js/db.json")
         // "tipos" son los tipos de propiedades(casa,dpto,ph), se filtran las propiedades que coincidan con la busqueda
         let final= domicilios.filter(x => x.ciudad.toLowerCase()===ciudad && x.precio>precioMinimo && x.precio<precioMaximo)
         // "final" toma los datos filtrados del array anterior y se toman las que coincidan con el precio y ciudad
-        guardarSS("indiceLength", final.length)
+        guardarLS("indiceLength", final.length)
         indiceInicial=parseInt(localStorage.getItem("indiceInicial"))
         indiceFinal=Math.ceil(parseInt(localStorage.getItem("indiceLength"))/10)
         $("#index").text(`${indiceInicial} de ${indiceFinal}`)
@@ -162,16 +169,18 @@ $(".true_label").each(function(){//Mantiene seleccionado los filtros por casa de
 
     }
 })
+
+// Botones para navegar entre paginas de las busquedas
 $("#siguiente").click(()=>{
     if (indiceInicial < indiceFinal){
-        guardarSS("indiceInicial", indiceInicial+1)
+        guardarLS("indiceInicial", indiceInicial+1)
         ejecutarBusqueda()
     }
     
 })
 $("#previo").click(()=>{
     if (indiceInicial <= indiceFinal && indiceInicial>1){
-        guardarSS("indiceInicial", indiceInicial-1)
+        guardarLS("indiceInicial", indiceInicial-1)
         ejecutarBusqueda()
     }
     

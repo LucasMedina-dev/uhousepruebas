@@ -14,13 +14,13 @@ let enviarBusqueda = document.getElementById("enviarBusqueda")
 enviarBusqueda.onclick = (e) =>{
     e.preventDefault()
     guardarLS("moneda", moneda.val())
-    guardarSS("indiceInicial", 1)
+    guardarLS("indiceInicial", 1)
     if (busquedaCiudad.value==""){
         busquedaCiudad.classList.add("advertir")
     }else{
         filtros.push(new buscadores(busquedaCiudad.value, busquedaMinimo.value, busquedaMaximo.value))
-        const filtradores=JSON.stringify(filtros)
-        guardarLS("filtros", filtradores)
+        
+        guardarLS("filtros", JSON.stringify(filtros))
         ejecutarBusqueda()
     }
 }

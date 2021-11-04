@@ -45,30 +45,9 @@ function agregarViviendas(ingreso){
 function guardarLS(clave, valor){
     localStorage.setItem(clave, valor)
 }
-function guardarSS(clave){
-    sessionStorage.getItem(clave)
-}
 function borrarItem ( array, item ) { // Con esta funcion elijo que borrar de que array
     var i = array.indexOf( item );
     array.splice( i, 1 );
-}
-function borrar(ingreso){
-    while (ingreso.length!=0){
-        propiedades.removeChild(ingreso[0])
-    }
-}
-function estado(label, estado){
-    switch (estado) {
-        case "activado":
-            label.classList.add("filtros_boton-activado")
-            label.classList.remove("filtros_boton-desactivado")
-            break;
-        case "desactivado":
-            label.classList.remove("filtros_boton-activado")
-            label.classList.add("filtros_boton-desactivado")
-            break;
-    }
-
 }
 function comprobarResultado(){ 
     if (propiedades.innerHTML==""){
