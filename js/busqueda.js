@@ -38,6 +38,7 @@ if (isNaN(precioMaximo)) {
 }
 function ejecutarBusqueda() {
     window.open("busquedas.html", "_self");
+    localStorage("indiceInicial", 0)
 }
 let resultado = document.getElementById("resultado") // elemento creado para ejecutar funcion comprobarBusqueda() que se ejecuta si no hay resultados
 let propiedades= document.getElementsByClassName("propiedades")[0]
@@ -154,7 +155,7 @@ $(".true_label").each(function(){//Mantiene seleccionado los filtros por casa de
 })
 let indiceInicial=localStorage.getItem("indiceInicial")
 let indiceFinal=Math.ceil(localStorage.getItem("indiceFinal")/10)
-$("#index").text(`${indiceInicial} de ${indiceFinal}`)
+$("#index").text(`${indiceInicial+1} de ${indiceFinal}`)
 
 $("#siguiente").click(()=>{
     indiceInicial++
