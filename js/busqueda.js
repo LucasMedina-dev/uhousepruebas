@@ -38,7 +38,6 @@ if (isNaN(precioMaximo)) {
 }
 function ejecutarBusqueda() {
     window.open("busquedas.html", "_self");
-    localStorage("indiceInicial", 0)
 }
 let resultado = document.getElementById("resultado") // elemento creado para ejecutar funcion comprobarBusqueda() que se ejecuta si no hay resultados
 let propiedades= document.getElementsByClassName("propiedades")[0]
