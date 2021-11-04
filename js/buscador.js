@@ -14,6 +14,7 @@ let enviarBusqueda = document.getElementById("enviarBusqueda")
 enviarBusqueda.onclick = (e) =>{
     e.preventDefault()
     guardarLS("moneda", moneda.val())
+    localStorage("indiceInicial", 1)
     if (busquedaCiudad.value==""){
         busquedaCiudad.classList.add("advertir")
     }else{

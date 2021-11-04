@@ -158,7 +158,10 @@ let indiceFinal=Math.ceil(localStorage.getItem("indiceLength")/10)
 $("#index").text(`${indiceInicial++} de ${indiceFinal}`)
 
 $("#siguiente").click(()=>{
-    indiceInicial++
-    guardarLS("indiceInicial", indiceInicial)
-    ejecutarBusqueda()
+    if (indiceInicial < indiceFinal){
+        indiceInicial++
+        guardarLS("indiceInicial", indiceInicial)
+        ejecutarBusqueda()
+    }
+    
 })
