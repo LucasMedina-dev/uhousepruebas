@@ -185,3 +185,9 @@ $("#previo").click(()=>{
     }
     
 })
+if (indiceFinal===1){
+    $("#siguiente").hidden()
+}
+if(indiceInicial===1){
+    $("#previo").hidden()
+}
