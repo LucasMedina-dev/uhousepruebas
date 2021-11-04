@@ -58,6 +58,8 @@ $("#orden").change(()=>{
     guardarLS("orden", orden)
     ejecutarBusqueda()
 })
+let indiceInicial
+let indiceFinal
 fetch("../js/db.json")
     .then((response) => response.json())
     .then(
@@ -67,6 +69,12 @@ fetch("../js/db.json")
         let final= domicilios.filter(x => x.ciudad.toLowerCase()===ciudad && x.precio>precioMinimo && x.precio<precioMaximo)
         // "final" toma los datos filtrados del array anterior y se toman las que coincidan con el precio y ciudad
         guardarLS("indiceLength", final.length)
+        indiceInicial=parseInt(localStorage.getItem("indiceInicial"))
+        indiceFinal=Math.ceil(parseInt(localStorage.getItem("indiceLength"))/10)
+        $("#index").text(`${indiceInicial} de ${indiceFinal}`)
+
+
+        // Ordenado por precio y ambientes
         switch (localStorage.getItem("orden")){
             case "precioMenor":
                 final.sort(function(a, b){
@@ -89,7 +97,9 @@ fetch("../js/db.json")
                 });
             break;
         }
-        agregarViviendas(final)
+        //Se agregan las viviendas filtradas, si no hay viviendas que coincidan con la busqueda
+        // comprobarResultado() lo va a notificar
+        agregarViviendas(final.slice(10*(indiceInicial-1), indiceInicial*10))
         comprobarResultado() 
     }) 
     .then(()=>{
@@ -152,10 +162,6 @@ $(".true_label").each(function(){//Mantiene seleccionado los filtros por casa de
 
     }
 })
-let indiceInicial=parseInt(localStorage.getItem("indiceInicial"))
-let indiceFinal=Math.ceil(parseInt(localStorage.getItem("indiceLength"))/10)
-$("#index").text(`${indiceInicial} de ${indiceFinal}`)
-
 $("#siguiente").click(()=>{
     if (indiceInicial < indiceFinal){
         guardarLS("indiceInicial", indiceInicial+1)
