@@ -305,4 +305,6 @@ input[type=number] { -moz-appearance:textfield; }
 }
 #index{
 	padding: 10px;
+	height: 50px;
+	display: inline-block;
 }
