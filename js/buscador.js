@@ -27,7 +27,7 @@ enviarBusqueda.onclick = (e) =>{
 //Esta funcion refiere a los filtros por Casa, departamento y ph del buscador
 /*Al hacer click en alguna de las 3 opciones, la funcion toma el atributo del boton clickeado 
 y lo guarda en localStorage con la clave "tipos"*/
-
+obtenerTipos()
 // Ejemplo del siguente evento, si "casa" está en el array, se borra del array y se sube a LS, caso contrario se agrega al array y se sube a LS
 $(".true_label").click(function(){
     let label=$(this).attr("for")
