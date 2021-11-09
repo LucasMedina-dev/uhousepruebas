@@ -58,8 +58,10 @@ function comprobarResultado(){
     }
 }
 function obtenerTipos(){
-    let tipos=["casa","departamento","ph"]
-    tipos= JSON.parse(localStorage.getItem("tipos"))
-    if (tipos.length===0 || localStorage.getItem("tipos")=== null){// Si se seleccionan las 3 opciones(busqueda vacia), se ejecuta lo siguiente para corregir el error
+    let tipos=[]
+    if (localStorage.getItem("tipos")===null || tipos.length===0){
         tipos=["casa","departamento","ph"]
+    }else{
+        tipos= JSON.parse(localStorage.getItem("tipos")) 
+    }
 }
