@@ -10,7 +10,7 @@ function agregarViviendas(ingreso){
                 <span class="propiedades_favorito propiedades_favorito-false" id="${ingreso[i].tipo.charAt(0)}${ingreso[i].id}">
                 <i class="fas fa-heart"></i></span>
             </label>
-            <div id="${ingreso[i].tipo}${i}" class="carousel slide" data-ride="carousel">
+            <div class="carousel slide" data-ride="carousel">
                 <div class="carousel-inner">
                     <div class="carousel-item active">
                         <img src="../images/${ingreso[i].tipo}2.jpg" class="d-block w-100">
