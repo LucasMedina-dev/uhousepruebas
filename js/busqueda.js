@@ -73,7 +73,7 @@ fetch("../js/db.json")
     (data) => {
         tipos.forEach(y=> domicilios= domicilios.concat(data.filter(x => x.tipo===y)))
         // "tipos" son los tipos de propiedades(casa,dpto,ph), se filtran las propiedades que coincidan con la busqueda
-        let final= domicilios.filter(x => x.ciudad.toLowerCase()===ciudad && x.precio>precioMinimo && x.precio<precioMaximo)
+        let final= domicilios.filter(x => x.ciudad.toLowerCase()===ciudad && x.precio>=precioMinimo && x.precio<=precioMaximo)
         // "final" toma los datos filtrados del array anterior y se toman las que coincidan con el precio y ciudad
         guardarLS("indiceLength", final.length)
         indiceInicial=parseInt(localStorage.getItem("indiceInicial"))
