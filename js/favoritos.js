@@ -5,7 +5,7 @@ let propiedades= document.getElementsByClassName("propiedades")[0]
 
 
 let favoritos=[]// Acá se van a guardar las viviendas que coincidan en id con las id del localStorage
-let idFav=JSON.parse(localStorage.getItem("idFav")) // Se toma el array de LS para trabajar sobre ella sin sobreescribir
+let idFav=JSON.parse(localStorage.getItem("idFav")) // Se toma el array de LS, se modifica y luego se vuelve a guardar en LS
 if (idFav == null){
     idFav=[]
 }
@@ -35,13 +35,6 @@ fetch("../js/db.json")
                 $(this).removeClass("propiedades_favorito-true")
                 $(this).addClass("propiedades_favorito-false")
             }
-        })
-        $(".propiedades_toggle").click(function(){ // Efecto al hacer click en informacion de la vivienda
-            $(this).fadeOut(500)
-            $(this).parent().children(".propiedades_informacion").delay(500)
-                                                                .fadeIn(1000)
-        })
-        $(".propiedades_favorito").click(function(){
             let id= $(this).attr("id")
             let n=id.match(/\d+/)[0]//Esto lee los numeros del id
 
@@ -51,6 +44,11 @@ fetch("../js/db.json")
                 idFav.push(n)
             }
             guardarLS("idFav", JSON.stringify(idFav)) //Finalmente se guarda el LS el array modificado
+        })
+        $(".propiedades_toggle").click(function(){ // Efecto al hacer click en informacion de la vivienda
+            $(this).fadeOut(500)
+            $(this).parent().children(".propiedades_informacion").delay(500)
+                                                                .fadeIn(1000)
         })
         $(".propiedades_favorito").each(function(){//Mantiene seleccionado los favoritos
             let id= $(this).attr("id")
