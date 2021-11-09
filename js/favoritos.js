@@ -53,8 +53,6 @@ fetch("../js/db.json")
         $(".propiedades_favorito").each(function(){//Mantiene seleccionado los favoritos
             let id= $(this).attr("id")
             let n=id.match(/\d+/)[0]
-            console.log(id)
-            console.log(n)
             if(idFav.find(x=> x===n)){
                 $(this).removeClass("propiedades_favorito-false")
                 $(this).addClass("propiedades_favorito-true")

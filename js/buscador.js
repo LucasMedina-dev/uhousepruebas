@@ -19,7 +19,6 @@ enviarBusqueda.onclick = (e) =>{
         busquedaCiudad.classList.add("advertir")
     }else{
         filtros.push(new buscadores(busquedaCiudad.value, busquedaMinimo.value, busquedaMaximo.value))
-        
         guardarLS("filtros", JSON.stringify(filtros))
         ejecutarBusqueda()
     }
