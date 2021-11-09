@@ -27,10 +27,8 @@ enviarBusqueda.onclick = (e) =>{
 //Esta funcion refiere a los filtros por Casa, departamento y ph del buscador
 /*Al hacer click en alguna de las 3 opciones, la funcion toma el atributo del boton clickeado 
 y lo guarda en localStorage con la clave "tipos"*/
+let tipos=["casa","departamento","ph"]
 let tipos= JSON.parse(localStorage.getItem("tipos"))
-if (tipos.length===0 || tipos=== null){// Si se seleccionan las 3 opciones(busqueda vacia), se ejecuta lo siguiente para corregir el error
-    tipos=["casa","departamento","ph"]
-}
 // Ejemplo del siguente evento, si "casa" está en el array, se borra del array y se sube a LS, caso contrario se agrega al array y se sube a LS
 $(".true_label").click(function(){
     let label=$(this).attr("for")
