@@ -57,3 +57,9 @@ function comprobarResultado(){
         resultado.classList.remove("displayBlock")
     }
 }
+function obtenerTipos(){
+    let tipos= JSON.parse(localStorage.getItem("tipos"))
+    if (tipos.length===0 || tipos=== null){// Si se seleccionan las 3 opciones(busqueda vacia), se ejecuta lo siguiente para corregir el error
+        tipos=["casa","departamento","ph"]
+    }
+}
