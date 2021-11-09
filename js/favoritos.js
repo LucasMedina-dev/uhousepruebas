@@ -2,8 +2,6 @@ $(".header_boton").click(function(){
     $(".header_menu-size").toggle(200)
 })
 let propiedades= document.getElementsByClassName("propiedades")[0]
-
-
 let favoritos=[]// Acá se van a guardar las viviendas que coincidan en id con las id del localStorage
 let idFav=JSON.parse(localStorage.getItem("idFav")) // Se toma el array de LS, se modifica y luego se vuelve a guardar en LS
 if (idFav == null){//Si no hay favoritos agregados, se genera un array vacio para poder trabajar
@@ -20,7 +18,6 @@ fetch("../js/db.json")
         if (favoritos.length===0){
             comprobarResultado()
         }
-        
     }) 
     .then(()=>{ 
         $('.propiedades_favorito').click(function(){ //Efecto al apretar boton de favorito
@@ -63,9 +60,6 @@ fetch("../js/db.json")
             }
         })
     })
-
-
-
 //Favoritos
 
 /*

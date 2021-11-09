@@ -26,7 +26,7 @@ function agregarViviendas(ingreso){
                     <span class="sr-only">Next</span>
                 </a>
             </div>
-            <ul id="datos${ingreso[i].id}">
+            <ul>
                 <button class="propiedades_toggle"><p class="propiedades_titulo">${ingreso[i].condicion} - ${ingreso[i].ciudad}</p></button>
                 <div class="propiedades_informacion">
                     <li class="propiedades_lista">U$S ${ingreso[i].precio}</li>
