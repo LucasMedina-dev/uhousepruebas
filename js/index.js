@@ -26,7 +26,8 @@ $.get(apiConversor, function(respuesta, sucess){
 $(".header_boton").click(function(){
     $(".header_menu-size").toggle(200)
 })
-obtenerTipos()
 $("#boton").click(()=>{
     $(".false").toggle(300)
 })
+tipos=["casa", "departamento", "ph"]
+guardarLS("tipos", JSON.stringify(tipos))
