@@ -58,7 +58,7 @@ function comprobarResultado(){
     }
 }
 function obtenerTipos(){
-    if (localStorage.getItem("tipos")===null){
+    if (localStorage.getItem("tipos")===null || tipos.length===0){
         let tipos=["casa","departamento","ph"]
     }else{
         let tipos= JSON.parse(localStorage.getItem("tipos")) 
