@@ -1,9 +1,7 @@
 function agregarViviendas(ingreso){
-
     for (let i=0; i< ingreso.length; i++){
         let viviendas = document.createElement("div")
         viviendas.classList.add("propiedades_contenedor")
-        viviendas.classList.add(`${ingreso[i].tipo}`)
         viviendas.innerHTML=`
             <label for="favorito${ingreso[i].id}" class="propiedades_label">
                 <input type="checkbox" id="favorito${ingreso[i].id}" class="favorito propiedades_favorito-display">
