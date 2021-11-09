@@ -63,4 +63,5 @@ function obtenerTipos(){
     }else{
         tipos= JSON.parse(localStorage.getItem("tipos")) 
     }
+    guardarLS("tipos", JSON.stringify(tipos))
 }
