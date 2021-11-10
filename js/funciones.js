@@ -58,6 +58,7 @@ function comprobarResultado(){
     }
 }
 function obtenerTipos(){
+    let tipos=[]
     if (localStorage.getItem("tipos")===null || tipos.length===0){
         tipos=["casa","departamento","ph"]
     }else{
@@ -65,4 +66,3 @@ function obtenerTipos(){
     }
     guardarLS("tipos", JSON.stringify(tipos))
 }
-obtenerTipos()
