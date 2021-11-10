@@ -57,10 +57,3 @@ function comprobarResultado(){
         resultado.classList.remove("displayBlock")
     }
 }
-function obtenerTipos(){
-    let tipos= JSON.parse(localStorage.getItem("tipos"))
-    if (localStorage.getItem("tipos")===null || tipos.length===0){
-        tipos=["casa","departamento","ph"]
-    }
-    guardarLS("tipos", JSON.stringify(tipos))
-}

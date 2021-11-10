@@ -66,7 +66,13 @@ $("#orden").change(()=>{
 
 let indiceInicial
 let indiceFinal
-obtenerTipos()
+
+tipos= JSON.parse(localStorage.getItem("tipos"))
+if (localStorage.getItem("tipos")===null || tipos.length===0){
+    tipos=["casa","departamento","ph"]
+}
+guardarLS("tipos", JSON.stringify(tipos))
+
 fetch("../js/db.json")
     .then((response) => response.json())
     .then(
@@ -164,6 +170,7 @@ $(".header_boton").click(function(){
 })
 
 $(".true_label").each(function(){//Mantiene seleccionado los filtros por casa departamento y ph
+
     let label=$(this).attr("for")
     if(tipos.find(x=> x===label)){
         $(this).removeClass("desactivado")
