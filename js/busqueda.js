@@ -66,11 +66,11 @@ $("#orden").change(()=>{
 
 let indiceInicial
 let indiceFinal
+obtenerTipos()
 fetch("../js/db.json")
     .then((response) => response.json())
     .then(
     (data) => {
-        obtenerTipos()
         tipos.forEach(y=> domicilios= domicilios.concat(data.filter(x => x.tipo===y)))
         // "tipos" son los tipos de propiedades(casa,dpto,ph), se filtran las propiedades que coincidan con la busqueda
         let final= domicilios.filter(x => x.ciudad.toLowerCase()===ciudad && x.precio>=precioMinimo && x.precio<=precioMaximo)
