@@ -58,7 +58,7 @@ function comprobarResultado(){
     }
 }
 function obtenerTipos(){
-    tipos= JSON.parse(localStorage.getItem("tipos"))
+    let tipos= JSON.parse(localStorage.getItem("tipos"))
     if (localStorage.getItem("tipos")===null || tipos.length===0){
         tipos=["casa","departamento","ph"]
     }
