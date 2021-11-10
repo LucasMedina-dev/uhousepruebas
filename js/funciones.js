@@ -65,3 +65,4 @@ function obtenerTipos(){
     }
     guardarLS("tipos", JSON.stringify(tipos))
 }
+obtenerTipos()
