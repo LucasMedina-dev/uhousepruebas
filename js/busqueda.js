@@ -68,7 +68,10 @@ let indiceInicial
 let indiceFinal
 obtenerTipos()
 fetch("../js/db.json")
-    .then((response) => response.json())
+    .then((response) => {
+        console.log(response)
+        response.json()
+    })
     .then(
     (data) => {
         tipos.forEach(y=> domicilios= domicilios.concat(data.filter(x => x.tipo===y)))
